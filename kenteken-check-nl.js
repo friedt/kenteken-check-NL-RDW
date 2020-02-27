@@ -62,8 +62,8 @@ const kentekenCheck = (kenteken) => {
 //el.innerHTML = result;
 
 
-// om performance wat te verbeteren kan ook het change event worden gebruikt
-document.getElementById('input-kenteken').addEventListener('input', (e) => {
+// om performance wat te verbeteren is het change event gebruikt
+document.getElementById('input-kenteken').addEventListener('change', (e) => {
   el.innerHTML = kentekenCheck(e.target.value);
   
 });
