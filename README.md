@@ -1,5 +1,9 @@
-# kenteken-check-NL / licenceplate nl / licence plate dutch
-NL Kenteken-check formats 2020 RDW
+# kenteken-check-NL / licenseplate nl / licenseplate dutch
+NL Kenteken-check formats 2020 RDW written in javascript
+
+# Information
+
+Based regex licenseplate check on formats released by dutch RDW
 
 # Toelichting
 Ik heb deze kentekenCheck gebaseerd op de actuele formats(kentekencombinaties) uitgegeven vanuit de RDW lijst welke is te vinden op 
