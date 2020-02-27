@@ -15,9 +15,9 @@ let el = document.getElementById('kenteken');
 const kentekenCheck = (kenteken) => {
   
   if (typeof kenteken !== 'string') return;
-
-  kenteken = kenteken.trim().split('-').join(''); // trim whitespace / strip dashes
-
+  
+  const str = kenteken.toUpperCase();
+  let newStr = '';
   const arr = ['^([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})([0-9]{2})$',
                '^([0-9]{2})([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{2})$',
                '^([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})$',
@@ -30,11 +30,8 @@ const kentekenCheck = (kenteken) => {
                '^([BDFGHJKLMNPRSTVWXYZ]{1})([0-9]{3})([BDFGHJKLMNPRSTVWXYZ]{2})$',
                '^([BDFGHJKLMNPRSTVWXYZ]{3})([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{1})$'];
 
-    const str = kenteken.toUpperCase();
-    let newStr = '';
-
-
-    // returns true immediately when found match : legacy browser proof
+  kenteken = kenteken.trim().split('-').join(''); // trim whitespace / strip dashes
+  // returns true immediately when found match : legacy browser proof
     let matchLicense = arr.some(regEx => {
 
       const re = new RegExp(regEx);
