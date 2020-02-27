@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+body {
+  font-family: 'Roboto Condensed';
+  font-size: 2rem;
+}
+
+div {
+  display: flex;
+  
+}
+
+input{
+  border: 1px solid green;
+  padding: 3px;
+  font-size: 17px;
+}
+
+label{
+  
+  flex-basis: 15%;
+}
+
+input:invalid {
+  border: red solid 3px;
+}
+
+input:valid {
+  border: 2px solid green;
+}
+
