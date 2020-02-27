@@ -1,3 +1,15 @@
-<input id="input-kenteken" type="text" maxlength="8" autocomplete="off">
+<div class="form-control">
+  <label for="inline">html5 validation</label>
+  <input id="inline" class="form-input" type="text" maxlength="6" autocomplete="off"
+         pattern="^([bdfghjklmnprstvwxyzBDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})([0-9]{2})|([0-9]{2})([0-9]{2})([bdfghjklmnprstvwxyzBDFGHJKLMNPRSTVWXYZ]{2})|([0-9]{2})([bdfghjklmnprstvwxyzBDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})|([bdfghjklmnprstvwxyzBDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})([bdfghjklmnprstvwxyzBDFGHJKLMNPRSTVWXYZ]{2})|([bdfghjklmnprstvwxyzBDFGHJKLMNPRSTVWXYZ]{2})([bdfghjklmnprstvwxyzBDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})|([0-9]{2})([bdfghjklmnprstvwxyzBDFGHJKLMNPRSTVWXYZ]{2})([bdfghjklmnprstvwxyzBDFGHJKLMNPRSTVWXYZ]{2})|([0-9]{2})([bdfghjklmnprstvwxyzBDFGHJKLMNPRSTVWXYZ]{3})([0-9]{1})|([0-9]{1})([bdfghjklmnprstvwxyzBDFGHJKLMNPRSTVWXYZ]{3})([0-9]{2})|([bdfghjklmnprstvwxyzBDFGHJKLMNPRSTVWXYZ]{2})([0-9]{3})([bdfghjklmnprstvwxyzBDFGHJKLMNPRSTVWXYZ]{1})|([bdfghjklmnprstvwxyzBDFGHJKLMNPRSTVWXYZ]{1})([0-9]{3})([bdfghjklmnprstvwxyzBDFGHJKLMNPRSTVWXYZ]{2})|([bdfghjklmnprstvwxyzBDFGHJKLMNPRSTVWXYZ]{3})([0-9]{2})([bdfghjklmnprstvwxyzBDFGHJKLMNPRSTVWXYZ]{1})$/">
+  </div>
 
-<div id="kenteken">output</div>
+<br><br><br>
+
+<div class="form-control">
+  <label for="input-kenteken">binded validation</label>
+  <input type="text" id="input-kenteken" maxlength="BDFGHJKLMNPRSTVWXYZ" autocomplete="off">
+</div>
+<div id="kenteken">
+  
+</div>
