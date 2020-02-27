@@ -16,6 +16,8 @@ let el = document.getElementById('kenteken');
 export const kentekenCheck = (kenteken) => {
   
 if (typeof kenteken !== 'string') return;
+
+// array regex patronen welke corresponderen met de formats uitgegegeven vanuit RDW
   
 const arr = ['([0-9]{2})([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{2})',
            '([BDFGHJKLMNPRSTVWXYZ]{2})([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})',
