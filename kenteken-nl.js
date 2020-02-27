@@ -13,7 +13,7 @@ https://www.rdw.nl/particulier/voertuigen/auto/de-kentekenplaat/het-kenteken-op-
 
 let el = document.getElementById('kenteken');
 // start check
-const kentekenCheck = (kenteken) => {
+export const kentekenCheck = (kenteken) => {
   
 if (typeof kenteken !== 'string') return;
   
