@@ -6,7 +6,6 @@ NL Kenteken-check formats 2020 RDW written in javascript
 Based regex licenseplate check on formats released by dutch RDW
 
 # Toelichting
-Uitgangspunt: keep it simple
 
 Ik heb deze kentekenCheck gebaseerd op de actuele formats(kentekencombinaties) uitgegeven door de RDW welke is te vinden op bijgevoegde link. Voor een project had ik deze nodig en wilde het zelf even uitzoeken. De open data API vd RDW 
 retourneert geen koppeltekens in het kenteken voor zover ik weet, dus vandaar deze oplossing.
