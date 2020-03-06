@@ -12,7 +12,7 @@ retourneert geen koppeltekens in het kenteken voor zover ik weet, dus vandaar de
 De array van regex patronen correspondeert exact met de lijst van formats op de site vd RDW in bijgaande link.
 De functie 'kentekenCheck' kijkt of het een valide NL kenteken is, er worden geen klinkers gebruikt en geen tekens die de RDW voorschrijft. Kentekens met AA en CD zijn in deze functie niet meegenomen, de letters C en Q mogen niet meer vd overheid ivm interpretatie problemen en zijn wel meegenomen.
 
-De functie kan nog wat geoptimaliseerd worden door Array.find, maar dan is een polyfill nodig een for loop met een break is ook een oplossing, of gewoon een forEach.
+De functie kan nog wat geoptimaliseerd worden door Array.find, maar dan is een polyfill nodig een for loop met een break is bijv. ook een oplossing. 
 
 https://www.rdw.nl/particulier/voertuigen/auto/de-kentekenplaat/het-kenteken-op-de-plaat/uitleg-over-de-cijfers-en-letters-op-de-kentekenplaat
 
