@@ -12,7 +12,7 @@ https://www.rdw.nl/particulier/voertuigen/auto/de-kentekenplaat/het-kenteken-op-
 */
 
 let el = document.getElementById('kenteken');
-
+let inputEl = document.getElementById('input-kenteken');
 // start function kentekenCheck
 const kentekenCheck = (kenteken) => {
   
@@ -37,7 +37,7 @@ const kentekenCheck = (kenteken) => {
            .split('-')
            .join(''); // trim whitespace / strip dashes
 
-   // returns true immediately when found match : legacy browser proof, no polyfill needed
+  // returns true immediately when found match : legacy browser proof, no polyfill needed
     let matchLicense = arrRegEx.some(regEx => {
 
       const re = new RegExp(regEx);
@@ -45,6 +45,7 @@ const kentekenCheck = (kenteken) => {
 
       // match on regex pattern 
       if (res === true){
+        inputEl.value = str.replace(re, '$1-$2-$3');        
         newStr = str.replace(re, '$1-$2-$3');
         return true;
       } 
@@ -53,7 +54,7 @@ const kentekenCheck = (kenteken) => {
   if (matchLicense){
     return newStr;
   } 
-  return 'XX-XX-XX'; // false
+  return 'XX-XX-XX';
 }
 
 // vervang het voorbeeld met een geldig kenteken zonder/met verkeerd geplaatste koppeltekens
@@ -63,7 +64,7 @@ const kentekenCheck = (kenteken) => {
 //el.innerHTML = result;
 
 // om met performance rekening te houden kan wellicht het change event worden gebruikt
-document.getElementById('input-kenteken').addEventListener('input', (e) => {
+inputEl.addEventListener('input', (e) => {
   
   let val = e.target.value;
   el.innerHTML = kentekenCheck(val);
