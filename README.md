@@ -21,7 +21,7 @@ https://www.rdw.nl/particulier/voertuigen/auto/de-kentekenplaat/het-kenteken-op-
 
 ## html5 validatie oplosssing
 
-Het is ook mogelijk om html5 validatie middels het 'pattern' attribuut toe te passen.
+Het is ook mogelijk om html5 validatie middels het 'pattern' attribuut toe te passen, welke is toegevoegd in de broncode.
 
 
 
