@@ -3,7 +3,7 @@ NL Kenteken-check formats 2020 RDW written in JavaScript and HTML5
 
 # Information
 
-Based regex licenseplate check on formats released by dutch RDW
+Licenseplate check based on formats released by dutch RDW
 
 # Toelichting
 
