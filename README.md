@@ -35,3 +35,7 @@ There are two solutions:
 2. HTML5
 
 The function 'kentekenCheck' returns true if a valid pattern is found, otherwise it returns 'XX-XX-XX', no vowels are accepted and no other characters that RDW described. Licenses with AA(Kingdome) and CD(corps diplomatique) are ignored in this function, characters C and Q are not allowed.
+
+# CSS
+
+The css added can be fine-tuned of course 
