@@ -38,4 +38,4 @@ The function 'kentekenCheck' returns true if a valid pattern is found, otherwise
 
 # CSS
 
-The css added can be fine-tuned of course 
+Some basic css
