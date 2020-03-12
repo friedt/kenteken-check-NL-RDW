@@ -1,5 +1,5 @@
 # dead simple kenteken-check-NL / licenseplate nl / licenseplate dutch
-NL Kenteken-check formats 2020 RDW written in javascript
+NL Kenteken-check formats 2020 RDW written in javascript and HTML5
 
 # Information
 
@@ -19,9 +19,9 @@ De functie Array.find kan ook, maar dan is een polyfill nodig, een 'for' loop me
 
 https://www.rdw.nl/particulier/voertuigen/auto/de-kentekenplaat/het-kenteken-op-de-plaat/uitleg-over-de-cijfers-en-letters-op-de-kentekenplaat
 
-## html5 validatie oplosssing
+## HTML5 validatie oplosssing
 
-Het is ook mogelijk om html5 validatie middels het 'pattern' attribuut toe te passen, welke is toegevoegd in de broncode.
+Het is ook mogelijk om HTML5 validatie middels het 'pattern' attribuut toe te passen, welke is toegevoegd in de broncode.
 
 
 
@@ -32,6 +32,6 @@ Dutch(NL) licencecheck based on the official formats released by RDW (RijksDiens
 There are two solutions:
 
 1. javascript
-2. html5
+2. HTML5
 
 The function 'kentekenCheck' returns true if a valid pattern is found, otherwise it returns 'XX-XX-XX', no vowels are accepted and no other characters that RDW described. Licenses with AA(Kingdome) and CD(corps diplomatique) are ignored in this function, characters C and Q are not allowed.
