@@ -11,8 +11,8 @@ https://www.rdw.nl/particulier/voertuigen/auto/de-kentekenplaat/het-kenteken-op-
 
 */
 
-let el = document.getElementById('kenteken');
-let inputEl = document.getElementById('input-kenteken');
+const el = document.getElementById('kenteken');
+const inputEl = document.getElementById('input-kenteken');
 // start function kentekenCheck
 const kentekenCheck = (kenteken) => {
   
