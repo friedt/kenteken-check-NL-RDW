@@ -9,6 +9,9 @@ https://www.rdw.nl/particulier/voertuigen/auto/de-kentekenplaat/het-kenteken-op-
 
  note: 'HTML5 input patterns don't accept flags so to get lowercase letters we need to add the uppercase and lowercase range (e.g. A-Za-z).'
 
+MIT License
+
+Copyright (c) 2020 Pepijn Friederichs
 */
 
 const el = document.getElementById('kenteken');
