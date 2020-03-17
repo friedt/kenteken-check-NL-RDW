@@ -9,7 +9,7 @@ Licenseplate check based on valid formats released by dutch RDW
 
 ## JavaScript validatie oplossing
 
-Ik heb deze kentekenCheck gebaseerd op de actuele formats(kentekencombinaties) uitgegeven door de RDW welke is te vinden op bijgevoegde link. Voor een project had ik deze nodig en wilde het zelf even uitzoeken. De open data API vd RDW 
+Ik heb deze kentekenCheck gebaseerd op de actuele formats(kentekencombinaties) uitgegeven door de RDW(Rijksdienst voor het Wegverkeer) welke is te vinden op bijgevoegde link. Voor een project had ik deze nodig en wilde het zelf even uitzoeken. De open data API vd RDW 
 retourneert geen koppeltekens in het kenteken voor zover ik weet, dus vandaar deze oplossing.
 De array van regex patronen correspondeert exact met de lijst van formats op de site vd RDW in bijgaande link.
 De functie 'kentekenCheck' kijkt of het een valide NL kenteken is and retourneert meteen true als een patroon valide is, en zo niet 'XX-XX-XX', er worden geen klinkers gebruikt en geen karakters die de RDW voorschrijft. Kentekens met AA(Koningshuis) en CD(Corps Diplomatique) zijn in deze functie niet meegenomen, de letters C en Q mogen niet meer vd overheid ivm interpretatie problemen en zijn wel meegenomen.
@@ -28,7 +28,7 @@ Het is ook mogelijk om HTML5 validatie middels het 'pattern' attribuut toe te pa
 
 # English
 
-Dutch(NL) licencecheck based on the official formats released by RDW (RijksDienst Wegverkeer) found behind the link added.
+Dutch(NL) licencecheck based on the official formats released by RDW (Rijksdienst voor het Wegverkeer) found behind the link added.
 There are two solutions:
 
 1. JavaScript
