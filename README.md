@@ -14,6 +14,8 @@ retourneert geen koppeltekens in het kenteken voor zover ik weet, dus vandaar de
 De array van regex patronen correspondeert exact met de lijst van formats op de site vd RDW in bijgaande link.
 De functie 'kentekenCheck' kijkt of het een valide NL kenteken is and retourneert meteen true als een patroon valide is, en zo niet 'XX-XX-XX', er worden geen klinkers gebruikt en geen karakters die de RDW voorschrijft. Kentekens met AA(Koningshuis) en CD(Corps Diplomatique) zijn in deze functie niet meegenomen, de letters C en Q mogen niet meer vd overheid ivm interpretatie problemen en zijn wel meegenomen.
 
+Verboden combinaties: GVD, KKK, KVT, LPF, NSB, PKK, PSV, TBS, SS en SD (ook niet in lettercombinaties met 3 letters)
+
 Array.some returns true wanneer eerste match is gevonden. Deze functie is legacy browser proof.
 De functie Array.find kan ook, maar dan is een polyfill nodig, een 'for' loop met een break is bijv. ook een oplossing. 
 
