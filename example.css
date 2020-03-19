@@ -32,6 +32,9 @@ input:required {
 label{
   display: block;
 }
+.html-input {
+  display: inline-block;
+}
 
 .html-input:valid {
   border: 3px solid green;
@@ -104,13 +107,21 @@ label{
   
 }
 
+.html-input:valid + .valid-message:before,
 .valid + .valid-message:before{
 /*  some css  */
   position: absolute;
   top: 5px;
   content:'√';
   color: green;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
+
+}
+
+.html-input:valid + .valid-message:before {
+  position: static;
+  top: auto;
+  margin-left: auto;
 }
 
 
