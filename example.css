@@ -21,11 +21,12 @@ input[type="text"] {
   text-transform: uppercase;
 }
 
-
-
-
 input:focus {
   outline: none;
+}
+
+input:required {
+  border: 3px solid grey;
 }
 
 label{
@@ -33,12 +34,14 @@ label{
 }
 
 .html-input:valid {
-  border: 2px solid green;
+  border: 3px solid green;
 }
 
-.html-input:invalid {
+.html-input:focus:invalid {
   border: red solid 3px;
 }
+
+
 
 .car-license {
       position: relative;
@@ -84,6 +87,7 @@ label{
 }
 .car-license__form-control{
   padding: 0 0 0 22px;
+
 }
 .car-license__input{
   width: 100%;
@@ -97,5 +101,17 @@ label{
   letter-spacing: 2px;
   font-weight: 600;
   margin:0;
+  
 }
+
+.valid + .valid-message:before{
+/*  some css  */
+  position: absolute;
+  top: 5px;
+  content:'√';
+  color: green;
+  margin-left: 1rem;
+}
+
+
 
