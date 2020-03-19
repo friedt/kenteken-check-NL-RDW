@@ -2,9 +2,10 @@
 De open data API vd rdw retourneert geen koppeltekens in het kenteken voor zover ik weet, dus vandaar deze oplossing.
 De array van regex patronen correspondeert exact met de lijst van formats op de site vd RDW in bijgaande link.
 De functie 'kentekenCheck' kijkt of het een valide NL kenteken is, er worden geen klinkers gebruikt en geen tekens die de RDW voorschrijft. Kentekens met AA en CD zijn in deze functie niet meegenomen, de letters C en Q mogen niet meer vd overheid ivm interpretatie problemen en zijn wel meegenomen.
+
 Verboden combinaties: GVD, KKK, KVT, LPF, NSB, PKK, PSV, TBS, SS en SD (ook niet in lettercombinaties met 3 letters)
 
-De functie kan nog wat geoptimaliseerd worden door Array.find, maar dan is een polyfill nodig, een 'for' loop met een break is ook een oplossing.
+De functie is legacy browser proof en kan ook door Array.find in te zetten, maar dan is een polyfill nodig, een 'for' loop met een break is ook een oplossing.
 
 https://www.rdw.nl/particulier/voertuigen/auto/de-kentekenplaat/het-kenteken-op-de-plaat/uitleg-over-de-cijfers-en-letters-op-de-kentekenplaat
 
@@ -19,7 +20,7 @@ const el = document.getElementById('kenteken');
 const inputEl = document.getElementById('input-kenteken');
 
 // start function kentekenCheck
-const kentekenCheck = (kenteken) => {
+const kentekenCheck = (kenteken, classValid = 'valid') => {
   
   if (typeof kenteken !== 'string') return;
   
@@ -53,7 +54,8 @@ const kentekenCheck = (kenteken) => {
 
       // match on regex pattern 
       if (res === true && resLegal === true){
-        inputEl.value = str.replace(re, '$1-$2-$3');        
+        inputEl.value = str.replace(re, '$1-$2-$3'); 
+        inputEl.classList.add(classValid);
         newStr = str.replace(re, '$1-$2-$3');
         return true;
       } 
@@ -62,6 +64,7 @@ const kentekenCheck = (kenteken) => {
   if (matchLicense){
     return newStr;
   } 
+  inputEl.classList.remove(classValid);
   return 'XX-XX-XX';
 }
 
@@ -78,6 +81,5 @@ inputEl.addEventListener('input', (e) => {
   el.innerHTML = kentekenCheck(val);
   
  });
-
 
 
