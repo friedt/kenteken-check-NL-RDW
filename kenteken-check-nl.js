@@ -7,84 +7,106 @@ Verboden combinaties: GVD, KKK, KVT, LPF, NSB, PKK, PSV, TBS, SS en SD (ook niet
 
 De functie is legacy browser proof en kan ook door Array.find in te zetten, maar dan is een polyfill nodig, een 'for' loop met een break is ook een oplossing.
 
+the javascript pattern used: module pattern
 
-note: default parameters : use babel when support legacy IE 10/11
-      https://babeljs.io/docs/en/babel-plugin-transform-parameters
- 
-note: 'HTML5 input patterns don't accept flags so to get lowercase letters we need to add the uppercase and lowercase range (e.g. A-Za-z).'
- 
-rdw documentation:
 https://www.rdw.nl/particulier/voertuigen/auto/de-kentekenplaat/het-kenteken-op-de-plaat/uitleg-over-de-cijfers-en-letters-op-de-kentekenplaat
 
+ note: 'HTML5 input patterns don't accept flags so to get lowercase letters we need to add the uppercase and lowercase range (e.g. A-Za-z).'
+ 
+ default parameters : use babel when support legacy IE
+ https://babeljs.io/docs/en/babel-plugin-transform-parameters
+ 
 MIT License
 Copyright (c) 2020 Pepijn Friederichs
 
 */
 
-const el = document.getElementById('kenteken');
-const inputEl = document.getElementById('input-kenteken');
+   const el = document.getElementById('kenteken');
+   const inputEl = document.getElementById('input-kenteken');
 
-// start function kentekenCheck
-const kentekenCheck = (kenteken, classValid = 'valid') => {
-  
-  if (typeof kenteken !== 'string') return;
-  
-  let str = kenteken.toUpperCase();
-  let newStr = '';
-  // based on rdw demands
-  const arrRegEx = ['^([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})([0-9]{2})$',
-               '^([0-9]{2})([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{2})$',
-               '^([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})$',
-               '^([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{2})$',
-               '^([BDFGHJKLMNPRSTVWXYZ]{2})([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})$',
-               '^([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{2})([BDFGHJKLMNPRSTVWXYZ]{2})$',
-               '^([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{3})([0-9]{1})$',
-               '^([0-9]{1})([BDFGHJKLMNPRSTVWXYZ]{3})([0-9]{2})$',
-               '^([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{3})([BDFGHJKLMNPRSTVWXYZ]{1})$',
-               '^([BDFGHJKLMNPRSTVWXYZ]{1})([0-9]{3})([BDFGHJKLMNPRSTVWXYZ]{2})$',
-               '^([BDFGHJKLMNPRSTVWXYZ]{3})([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{1})$'];
-  
-  const forbiddenCharacters = /^((?!GVD|KKK|KVT|LPF|NSB|PKK|PSV|TBS|SS|SD).){6}$/;
+   // start function kentekenCheck
+   const kentekenCheck = (() => {
 
-  str = str.trim()
-           .split('-')
-           .join(''); // trim whitespace / strip dashes
+        let classValid = '';
+        const arrRegEx = ['^([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})([0-9]{2})$',
+            '^([0-9]{2})([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{2})$',
+            '^([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})$',
+            '^([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{2})$',
+            '^([BDFGHJKLMNPRSTVWXYZ]{2})([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})$',
+            '^([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{2})([BDFGHJKLMNPRSTVWXYZ]{2})$',
+            '^([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{3})([0-9]{1})$',
+            '^([0-9]{1})([BDFGHJKLMNPRSTVWXYZ]{3})([0-9]{2})$',
+            '^([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{3})([BDFGHJKLMNPRSTVWXYZ]{1})$',
+            '^([BDFGHJKLMNPRSTVWXYZ]{1})([0-9]{3})([BDFGHJKLMNPRSTVWXYZ]{2})$',
+            '^([BDFGHJKLMNPRSTVWXYZ]{3})([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{1})$'];
+        const forbiddenCharacters = /^((?!GVD|KKK|KVT|LPF|NSB|PKK|PSV|TBS|SS|SD).){6}$/;
 
-  // returns true immediately when found match : legacy browser proof, no polyfill needed
-    let matchLicense = arrRegEx.some(regEx => {
+        const convertLicense = (str) => {
 
-      const re = new RegExp(regEx);
-      const res = re.test(str);
-      const resLegal = forbiddenCharacters.test(str);
+          let newStr = '';
+          // based on rdw demands
+          // returns true immediately when found match : legacy browser proof IE 9/10/11, no polyfill needed
+          let matchLicense = arrRegEx.some(regEx => {
 
-      // match on regex pattern 
-      if (res === true && resLegal === true){
-        inputEl.value = str.replace(re, '$1-$2-$3'); 
-        inputEl.classList.add(classValid);
-        newStr = str.replace(re, '$1-$2-$3');
-        return true;
-      } 
+            const re = new RegExp(regEx);
+            const res = re.test(str);
+            const resLegal = forbiddenCharacters.test(str);
+
+            // match on regex pattern
+            if (res === true && resLegal === true) {
+              inputEl.value = str.replace(re, '$1-$2-$3');
+              inputEl.classList.add(classValid);
+              newStr = str.replace(re, '$1-$2-$3');
+              return true;
+            }
+          });
+
+          if (matchLicense) {
+            return newStr;
+          }
+          inputEl.classList.remove(classValid);
+          return 'XX-XX-XX';
+        };
+
+        const getLicence = (licence, classV = 'valid') => {
+            if (typeof licence !== 'string') return;
+
+            classValid = classV;
+            let str = licence.toUpperCase()
+                .trim()
+                .split('-')
+                .join(''); // trim whitespace / strip dashes
+            return convertLicense(str);
+        };
+
+        return {
+            getLicence,
+        }
+
+
+    })();
+
+    // vervang het voorbeeld met een geldig kenteken zonder/met verkeerd geplaatste koppeltekens
+    // bijvoorbeeld 12TTHJ HFFF43 of 1KGF55 of G234TR H222GG, HF-FF43 , G-234-TR
+    // uncomment both rules below to not use the input field
+    //const result =  kentekenCheck('G244TR');
+    //el.innerHTML = result;
+
+    // om met performance rekening te houden kan wellicht het change event worden gebruikt
+
+
+    // vervang het voorbeeld met een geldig kenteken zonder/met verkeerd geplaatste koppeltekens
+    // bijvoorbeeld 12TTHJ HFFF43 of 1KGF55 of G234TR H222GG, HF-FF43 , G-234-TR
+    // uncomment both rules below to not use the input field
+    //const result =  kentekenCheck('G244TR');
+    //el.innerHTML = result;
+
+    // om met performance rekening te houden kan wellicht het change event worden gebruikt
+
+
+    inputEl.addEventListener('input', (e) => {
+        el.innerHTML = kentekenCheck.getLicence(e.target.value);
     });
-  
-  if (matchLicense){
-    return newStr;
-  } 
-  inputEl.classList.remove(classValid);
-  return 'XX-XX-XX';
-}
 
-// vervang het voorbeeld met een geldig kenteken zonder/met verkeerd geplaatste koppeltekens
-// bijvoorbeeld 12TTHJ HFFF43 of 1KGF55 of G234TR H222GG, HF-FF43 , G-234-TR
-// uncomment both rules below to not use the input field
-//const result =  kentekenCheck('G244TR');
-//el.innerHTML = result;
-
-// om met performance rekening te houden kan wellicht het change event worden gebruikt
-inputEl.addEventListener('input', (e) => {
-  
-  let val = e.target.value;
-  el.innerHTML = kentekenCheck(val);
-  
- });
 
 
