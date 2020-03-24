@@ -92,16 +92,6 @@ Copyright (c) 2020 Pepijn Friederichs
     // vervang het voorbeeld met een geldig kenteken zonder/met verkeerd geplaatste koppeltekens
     // bijvoorbeeld 12TTHJ HFFF43 of 1KGF55 of G234TR H222GG, HF-FF43 , G-234-TR
     
-
-    // om met performance rekening te houden kan wellicht het change event worden gebruikt
-
-
-    // vervang het voorbeeld met een geldig kenteken zonder/met verkeerd geplaatste koppeltekens
-    // bijvoorbeeld 12TTHJ HFFF43 of 1KGF55 of G234TR H222SD, HF-FF43 , G-234-TR
-    // uncomment both rules below to not use the input field
-    //const result =  kentekenCheck('G244TR');
-    //el.innerHTML = result;
-
     // om met performance rekening te houden kan wellicht het change event worden gebruikt
 
 
