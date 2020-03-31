@@ -1,8 +1,11 @@
+/* some basic styling */
 
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -32,17 +35,7 @@ input:required {
 label{
   display: block;
 }
-.html-input {
-  display: inline-block;
-}
 
-.html-input:valid {
-  border: 3px solid green;
-}
-
-.html-input:focus:invalid {
-  border: red solid 3px;
-}
 
 
 
@@ -107,7 +100,19 @@ label{
   
 }
 
-.html-input:valid + .valid-message:before,
+.html5-input {
+  display: inline-block;
+}
+
+.html5-input:valid {
+  border: 3px solid green;
+}
+
+.html5-input:focus:invalid {
+  border: red solid 3px;
+}
+
+.html5-input:valid + .valid-message:before,
 .valid + .valid-message:before{
 /*  some css  */
   position: absolute;
@@ -118,7 +123,7 @@ label{
 
 }
 
-.html-input:valid + .valid-message:before {
+.html5-input:valid + .valid-message:before {
   position: static;
   top: auto;
   margin-left: auto;
