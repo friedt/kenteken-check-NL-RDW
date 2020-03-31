@@ -28,7 +28,7 @@ const inputEl = document.getElementById('input-kenteken');
 // start class KentekenCheck
 class KentekenCheck {
   
-  constructor(kenteken, classValid  = 'valid'){
+  constructor(kenteken, classValid  = 'valid') {
    	this.kenteken = kenteken;
     this.classValid = classValid;
     this.arrRegEx = ['^([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})([0-9]{2})$',
@@ -43,12 +43,10 @@ class KentekenCheck {
                '^([BDFGHJKLMNPRSTVWXYZ]{1})([0-9]{3})([BDFGHJKLMNPRSTVWXYZ]{2})$',
                '^([BDFGHJKLMNPRSTVWXYZ]{3})([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{1})$'];
   
-  this.forbiddenCharacters = /^((?!GVD|KKK|KVT|LPF|NSB|PKK|PSV|TBS|SS|SD).){6}$/;
+    this.forbiddenCharacters = /^((?!GVD|KKK|KVT|LPF|NSB|PKK|PSV|TBS|SS|SD).){6}$/;
   }
   
-  
-  
-  get license(){
+  get license() {
     if (typeof this.kenteken !== 'string') return;
     
     let str = this.kenteken.toUpperCase()
@@ -58,7 +56,7 @@ class KentekenCheck {
 	return this.convertKenteken(str);
   }
   
-  convertKenteken(str){
+  convertKenteken(str) {
     
     let newStr = '';
     // based on rdw demands
@@ -78,7 +76,7 @@ class KentekenCheck {
       } 
     });
   
-  if (matchLicense){
+  if (matchLicense) {
     return newStr;
   } 
   inputEl.classList.remove(this.classValid);
@@ -91,10 +89,6 @@ class KentekenCheck {
 // bijvoorbeeld 12TTHJ HFFF43 of 1KGF55 of G234TR H222GG, HF-FF43 , G-234-TR
 
 // om met performance rekening te houden kan wellicht het change event worden gebruikt
-
-
-
-
 
 let kt2 = new KentekenCheck('GFYY54');
 kt2.license;
