@@ -5,7 +5,7 @@ De functie 'kentekenCheck' kijkt of het een valide NL kenteken is, er worden gee
 
 Verboden combinaties: GVD, KKK, KVT, LPF, NSB, PKK, PSV, TBS, SS en SD (ook niet in lettercombinaties met 3 letters)
 
-De functie is legacy browser proof en kan ook door Array.find in te zetten, maar dan is een polyfill nodig, een 'for' loop met een break is ook een oplossing.
+De functie Array.some is legacy browser proof en kan ook worden vervangen door Array.find in te zetten, maar dan is een polyfill nodig, een 'for' loop met een break is ook een oplossing.
 
 https://www.rdw.nl/particulier/voertuigen/auto/de-kentekenplaat/het-kenteken-op-de-plaat/uitleg-over-de-cijfers-en-letters-op-de-kentekenplaat
 
