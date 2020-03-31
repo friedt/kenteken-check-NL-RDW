@@ -21,12 +21,15 @@ De functie Array.find is een andere optie(moderne browsers), maar dan is een pol
 
 https://www.rdw.nl/particulier/voertuigen/auto/de-kentekenplaat/het-kenteken-op-de-plaat/uitleg-over-de-cijfers-en-letters-op-de-kentekenplaat
 
+## javascript methoden
+
+Er is een keuzemogelijkheid voor twee syntactische oplossingen:
+- function (IIFE) 
+- class declaratie
+
 ## HTML5 validatie oplosssing
 
 Het is ook mogelijk om HTML5 validatie middels het 'pattern' attribuut toe te passen, welke is toegevoegd in de broncode.
-
-
-
 
 # English
 
