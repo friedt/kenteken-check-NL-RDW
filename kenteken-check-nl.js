@@ -20,10 +20,10 @@ Copyright (c) 2020 Pepijn Friederichs
 */
 
     const el = document.getElementById('kenteken');
-    const inputEl = document.getElementById('input-kenteken');
+    const inputElm = document.getElementById('input-kenteken');
 
     // start function kentekenCheck
-    const kentekenCheck = (() => {
+    const kentekenCheck = ((elm) => {
 
         let classValid = '';
         let newStr = '';
@@ -52,8 +52,8 @@ Copyright (c) 2020 Pepijn Friederichs
 
                 // match on regex pattern
                 if (res === true && resLegal === true) {
-                    inputEl.value = str.replace(re, '$1-$2-$3');
-                    inputEl.classList.add(classValid);
+                    elm.value = str.replace(re, '$1-$2-$3');
+                    elm.classList.add(classValid);
                     newStr = str.replace(re, '$1-$2-$3');
                     return true;
                 }
@@ -67,7 +67,7 @@ Copyright (c) 2020 Pepijn Friederichs
             if (match) {
                 return newStr;
             }
-            inputEl.classList.remove(classValid);
+            elm.classList.remove(classValid);
             return 'XX-XX-XX';
         };
 
@@ -87,14 +87,15 @@ Copyright (c) 2020 Pepijn Friederichs
         }
 
 
-    })();
+    })(inputElm);
 
     // vervang het voorbeeld met een geldig kenteken zonder/met verkeerd geplaatste koppeltekens
     // bijvoorbeeld 12TTHJ HFFF43 of 1KGF55 of G234TR H222GG, HF-FF43 , G-234-TR
     
+
     // om met performance rekening te houden kan wellicht het change event worden gebruikt
 
 
-    inputEl.addEventListener('input', (e) => {
+    inputElm.addEventListener('input', (e) => {
         el.innerHTML = kentekenCheck.getLicence(e.target.value);
     });
