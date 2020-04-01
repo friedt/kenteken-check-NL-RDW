@@ -23,7 +23,7 @@ https://www.rdw.nl/particulier/voertuigen/auto/de-kentekenplaat/het-kenteken-op-
 
 ## JavaScript methoden
 
-Er is een keuzemogelijkheid geboden voor twee syntactische oplossingen:
+Er is een keuzemogelijkheid geboden voor twee syntactische oplossingen, functionaliteit is hetzelfde:
 - function (IIFE) 
 - class declaratie
 
@@ -36,7 +36,7 @@ Het is ook mogelijk om HTML5 validatie middels het 'pattern' attribuut toe te pa
 Dutch(NL) licencecheck based on the official formats released by RDW (Rijksdienst voor het Wegverkeer) found behind the link added.
 There are two solutions:
 
-1. JavaScript
+1. JavaScript (class or iife, with same functionality)
 2. HTML5
 
 The function 'kentekenCheck' returns true if a valid pattern is found, otherwise it returns 'XX-XX-XX', no vowels are accepted and no other characters that RDW described. Licenses with AA(Kingdome) and CD(corps diplomatique) are ignored in this function, characters C and Q are not allowed.
