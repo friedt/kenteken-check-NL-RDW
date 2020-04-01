@@ -21,7 +21,7 @@ De functie Array.find is een andere optie(moderne browsers), maar dan is een pol
 
 https://www.rdw.nl/particulier/voertuigen/auto/de-kentekenplaat/het-kenteken-op-de-plaat/uitleg-over-de-cijfers-en-letters-op-de-kentekenplaat
 
-## javascript methoden
+## JavaScript methoden
 
 Er is een keuzemogelijkheid geboden voor twee syntactische oplossingen:
 - function (IIFE) 
