@@ -23,7 +23,7 @@ https://www.rdw.nl/particulier/voertuigen/auto/de-kentekenplaat/het-kenteken-op-
 
 ## javascript methoden
 
-Er is een keuzemogelijkheid voor twee syntactische oplossingen:
+Er is een keuzemogelijkheid geboden voor twee syntactische oplossingen:
 - function (IIFE) 
 - class declaratie
 
