@@ -49,3 +49,7 @@ Forbidden as from latest serie 11: PVV, SGP and VVD
 # CSS
 
 Some basic css
+
+# Performance
+It seems that using javascript class declaration is the less performant way (but most of times one uses babel to convert to es5)
+https://jsben.ch/JeRKn
