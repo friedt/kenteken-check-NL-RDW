@@ -34,7 +34,7 @@ Het is ook mogelijk om HTML5 validatie middels het 'pattern' attribuut toe te pa
 # English
 
 Dutch(NL) licencecheck based on the official formats released by RDW (Rijksdienst voor het Wegverkeer) found behind the link added.
-There are two solutions:
+Two solutions are provided:
 
 1. JavaScript (class or iife, with same functionality)
 2. HTML5
