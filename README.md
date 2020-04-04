@@ -52,4 +52,4 @@ Some basic css
 
 # Performance
 It seems that using javascript class declaration is the less performant way (but most of times one uses babel to convert to es5)
-https://jsperf.com/class-vs-iife/1
+https://jsperf.com/class-vs-iife/3
