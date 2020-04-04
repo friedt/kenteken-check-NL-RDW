@@ -41,6 +41,8 @@ There are two solutions:
 
 The function 'kentekenCheck' returns true if a valid pattern is found and formats it, otherwise it returns 'XX-XX-XX', no vowels are accepted and no other characters that RDW described. Licenses with AA(Kingdome) and CD(corps diplomatique) are ignored in this function, characters C and Q are not allowed.
 
+Forbidden combinations: GVD, KKK, KVT, LPF, NSB, PKK, PSV, TBS, SS en SD (also not in character combinations with 3 characters)
+
 # CSS
 
 Some basic css
