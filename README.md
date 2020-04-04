@@ -12,7 +12,7 @@ Licenseplate-check / kenteken-check based on valid formats released by dutch RDW
 Ik heb deze kentekenCheck gebaseerd op de actuele formats(kentekencombinaties) uitgegeven door de RDW(Rijksdienst voor het Wegverkeer) welke is te vinden via bijgevoegde link. Voor een project had ik deze nodig en wilde het zelf even uitzoeken. De open data API vd RDW 
 retourneert geen koppeltekens in het kenteken voor zover bekend, dus vandaar deze oplossing.
 De array van regex patronen correspondeert exact met de lijst van formats op de site vd RDW in bijgaande link.
-De functie 'kentekenCheck' kijkt of het een valide NL kenteken is en retourneert meteen true als een patroon valide is en formatteert het kenteken. Indien false retourneert 'XX-XX-XX', er worden geen klinkers gebruikt en geen karakters die de RDW voorschrijft. Kentekens met AA(Koningshuis) en CD(Corps Diplomatique) zijn in deze functie niet meegenomen, de letters C en Q mogen niet meer vd overheid ivm interpretatie problemen en zijn wel meegenomen.
+De functie 'kentekenCheck' controleert of het ingevoerde kenteken correspondeert met het eerste valide patroon en retourneert vervolgens true en formatteert het kenteken. Indien false retourneert 'XX-XX-XX', er worden geen klinkers gebruikt en geen karakters die de RDW voorschrijft. Kentekens met AA(Koningshuis) en CD(Corps Diplomatique) zijn in deze functie niet meegenomen, de letters C en Q mogen niet meer vd overheid ivm interpretatie problemen en zijn wel meegenomen.
 
 Verboden combinaties: GVD, KKK, KVT, LPF, NSB, PKK, PSV, TBS, SS en SD (ook niet in lettercombinaties met 3 letters)
 Verboden vanaf serie 11: PVV, SGP en VVD 
