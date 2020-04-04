@@ -15,6 +15,7 @@ De array van regex patronen correspondeert exact met de lijst van formats op de 
 De functie 'kentekenCheck' kijkt of het een valide NL kenteken is en retourneert meteen true als een patroon valide is en formatteert het kenteken. Indien false retourneert 'XX-XX-XX', er worden geen klinkers gebruikt en geen karakters die de RDW voorschrijft. Kentekens met AA(Koningshuis) en CD(Corps Diplomatique) zijn in deze functie niet meegenomen, de letters C en Q mogen niet meer vd overheid ivm interpretatie problemen en zijn wel meegenomen.
 
 Verboden combinaties: GVD, KKK, KVT, LPF, NSB, PKK, PSV, TBS, SS en SD (ook niet in lettercombinaties met 3 letters)
+Verboden vanaf serie 11: PVV, SGP en VVD 
 
 Array.some returns true wanneer eerste match is gevonden. Deze functie is legacy browser proof.
 Een alternatief is Array.find (alleen moderne browsers), maar dan is een polyfill nodig, een 'for' loop met een break is bijv. ook een oplossing. 
@@ -42,6 +43,7 @@ Two solutions are provided:
 The function 'kentekenCheck' returns true if a valid pattern is found and formats it, otherwise it returns 'XX-XX-XX', no vowels are accepted and no other characters that RDW described. Licenses with AA(Kingdome) and CD(corps diplomatique) are ignored in this function, characters C and Q are not allowed.
 
 Forbidden combinations: GVD, KKK, KVT, LPF, NSB, PKK, PSV, TBS, SS en SD (also not in character combinations with 3 characters)
+Forbidden as from latest serie 11: PVV, SGP and VVD 
 
 # CSS
 
