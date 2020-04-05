@@ -24,8 +24,9 @@ const inputElm = document.getElementById('input-kenteken') as HTMLInputElement;
 
 // start class KentekenCheck
 class KentekenCheck {
-
+  
   newStr: string;
+  index: number;
   kenteken: string;
   inputElm: HTMLInputElement;
   classValid: string;
@@ -34,7 +35,8 @@ class KentekenCheck {
   
   constructor(kenteken: string, inputElm: HTMLInputElement, classValid  = 'valid'){
     this.newStr = '';
-   	this.kenteken = kenteken;
+    this.index = 0;
+    this.kenteken = kenteken;
     this.inputElm = inputElm;
     this.classValid = classValid;
     this.arrRegEx = ['^([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})([0-9]{2})$',
@@ -63,7 +65,7 @@ class KentekenCheck {
   }
   
   matchLicense(str: string) {
-    return this.arrRegEx.some(regEx => {
+    return this.arrRegEx.some((regEx, i) => {
 
       const re = new RegExp(regEx);
       const res = re.test(str);
@@ -71,10 +73,7 @@ class KentekenCheck {
 
       // match on regex pattern 
       if (res === true && resLegal === true){
-        this.inputElm.value = str.replace(re, '$1-$2-$3'); 
-        this.inputElm.classList.add(this.classValid);
-        this.newStr = str.replace(re, '$1-$2-$3');
-        
+        this.index = i;
         return true;
       } else {
           return false;
@@ -89,6 +88,10 @@ class KentekenCheck {
     let match = this.matchLicense(str);
     
   if (match){
+    const re = new RegExp(this.arrRegEx[this.index]);
+    this.inputElm.value = str.replace(re, '$1-$2-$3'); 
+    this.inputElm.classList.add(this.classValid);
+    this.newStr = str.replace(re, '$1-$2-$3');
     return this.newStr;
   } 
   this.inputElm.classList.remove(this.classValid);
@@ -99,7 +102,6 @@ class KentekenCheck {
 
 // vervang het voorbeeld met een geldig kenteken zonder/met verkeerd geplaatste koppeltekens
 // bijvoorbeeld 12TTHJ HFFF43 of 1KGF55 of G234TR H222GG, HF-FF43 , G-234-TR
-
 // om met performance rekening te houden kan wellicht het change event worden gebruikt
 
 let kt2 = new KentekenCheck('GFYY54', inputElm);
