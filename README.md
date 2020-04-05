@@ -38,7 +38,7 @@ Het is ook mogelijk om HTML5 validatie middels het 'pattern' attribuut toe te pa
 Dutch(NL) licencecheck based on the official formats released by RDW (Rijksdienst voor het Wegverkeer) found behind the link added.
 Two solutions are provided:
 
-1. JavaScript (class or iife, with same functionality)
+1. JavaScript/TypeScript(class or iife, with same functionality)
 2. HTML5
 
 The function 'kentekenCheck' returns true if a valid pattern is found and formats it, otherwise it returns 'XX-XX-XX', no vowels are accepted and no other characters that RDW described. Licenses with AA(Kingdome) and CD(corps diplomatique) are ignored in this function, characters C and Q are not allowed.
