@@ -1,5 +1,5 @@
 # dead simple valid kenteken-check-NL / licenseplate nl / licenseplate dutch
-NL Kenteken-check formats 2020 RDW written in JavaScript or HTML5
+NL Kenteken-check formats 2020 RDW written in JavaScript, TypeScript or HTML5
 
 # Information
 
@@ -24,9 +24,10 @@ https://www.rdw.nl/particulier/voertuigen/auto/de-kentekenplaat/het-kenteken-op-
 
 ## JavaScript methoden
 
-Er is een keuzemogelijkheid geboden voor twee syntactische oplossingen, functionaliteit is hetzelfde:
+Er is een keuzemogelijkheid geboden voor drie syntactische oplossingen, functionaliteit is hetzelfde:
 - function (IIFE) 
 - class declaratie
+- TypeScript
 
 ## HTML5 validatie oplosssing
 
