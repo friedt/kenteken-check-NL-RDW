@@ -24,12 +24,13 @@ const inputElm = document.getElementById('input-kenteken') as HTMLInputElement;
 
 // start class KentekenCheck
 class KentekenCheck {
-newStr: string;
-kenteken: string;
-inputElm: HTMLInputElement;
-classValid: string;
-arrRegEx: Array<string>;
-forbiddenCharacters: RegExp;
+
+  newStr: string;
+  kenteken: string;
+  inputElm: HTMLInputElement;
+  classValid: string;
+  arrRegEx: Array<string>;
+  forbiddenCharacters: RegExp;
   
   constructor(kenteken: string, inputElm: HTMLInputElement, classValid  = 'valid'){
     this.newStr = '';
