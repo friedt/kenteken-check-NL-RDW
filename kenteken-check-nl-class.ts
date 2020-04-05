@@ -52,8 +52,6 @@ class KentekenCheck {
   this.forbiddenCharacters = /^((?!GVD|KKK|KVT|LPF|NSB|PKK|PSV|TBS|SS|SD).){6}$/;
   }
   
-  
-  
   get license(){
     if (typeof this.kenteken !== 'string') return;
     
@@ -103,10 +101,6 @@ class KentekenCheck {
 // bijvoorbeeld 12TTHJ HFFF43 of 1KGF55 of G234TR H222GG, HF-FF43 , G-234-TR
 
 // om met performance rekening te houden kan wellicht het change event worden gebruikt
-
-
-
-
 
 let kt2 = new KentekenCheck('GFYY54', inputElm);
 kt2.license;
