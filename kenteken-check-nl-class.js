@@ -18,12 +18,12 @@ MIT License
 Copyright (c) 2020 Pepijn Friederichs
 */
 
-const el = document.getElementById('kenteken');
-const inputElm = document.getElementById('input-kenteken');
+//const el = document.getElementById('kenteken');
+//const inputElm = document.getElementById('input-kenteken');
 
 
 // start class KentekenCheck
-class KentekenCheck {
+export class KentekenCheck {
   
   constructor(kenteken, inputElm, classValid  = 'valid'){
     this.newStr = '';
@@ -97,16 +97,16 @@ class KentekenCheck {
 
 // om met performance rekening te houden kan wellicht het change event worden gebruikt
 
-let kt2 = new KentekenCheck('GFYY54', inputElm);
-kt2.license;
+// let kt2 = new KentekenCheck('GFYY54', inputElm);
+// kt2.license;
 
-inputElm.addEventListener('input', (e) => {
+// inputElm.addEventListener('input', (e) => {
   
-  let val = e.target.value;
-  let kt = new KentekenCheck(val, inputElm);
-  el.innerHTML = kt.license;
+//   let val = e.target.value;
+//   let kt = new KentekenCheck(val, inputElm);
+//   el.innerHTML = kt.license;
   
- });
+//  });
 
 
 
