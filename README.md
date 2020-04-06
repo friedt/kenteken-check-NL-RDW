@@ -33,6 +33,10 @@ Er is een keuzemogelijkheid geboden voor drie syntactische oplossingen, function
 
 Het is ook mogelijk om HTML5 validatie middels het 'pattern' attribuut toe te passen, welke is toegevoegd in de broncode.
 
+## Unit test
+
+kenteken-check-nl-class.js is 100% covered by unit testing using Jest. Jest is not part of the repository. One needs to install that first. kenteken-check-nl-class.spec.js contains the specs.
+
 # English
 
 Dutch(NL) licencecheck based on the official formats released by RDW (Rijksdienst voor het Wegverkeer) found behind the link added.
