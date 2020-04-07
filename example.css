@@ -117,7 +117,7 @@ label{
 /*  some css  */
   position: absolute;
   top: 5px;
-  content:'√';
+  content:'\2713';
   color: green;
   margin-left: 0.5rem;
 
