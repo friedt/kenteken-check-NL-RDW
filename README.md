@@ -35,7 +35,7 @@ Het is ook mogelijk om HTML5 validatie middels het 'pattern' attribuut toe te pa
 
 ## Unit test
 
-kenteken-check-nl-class.js is 100% covered by unit testing using Jest. Jest is not part of the repository. One needs to install that first. kenteken-check-nl-class.spec.js contains the specs.
+kenteken-check-nl-class.js is 100% covered by unit testing using Jest. Jest is not part of the repository, kenteken-check-nl-class.spec.js contains the specs.
 
 # English
 
