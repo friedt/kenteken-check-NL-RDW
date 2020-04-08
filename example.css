@@ -1,133 +1,139 @@
-/* some basic styling */
-
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 
-html {
-  box-sizing: border-box;
-}
+        html {
+            box-sizing: border-box;
+        }
 
-*, *:before, *:after {
-  box-sizing: inherit;
-}
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
 
-body {
-  font-family: 'Roboto Condensed';
-  font-size: 2rem;
-  
-}
+        body {
+            font-family: 'Roboto Condensed';
+            font-size: 2rem;
 
-input[type="text"] {
-  padding: 5px;
-  width: 100%;
-  max-width: 200px;
-  font-size: 2rem;
-  text-transform: uppercase;
-}
+        }
 
-input:focus {
-  outline: none;
-}
+        input[type="text"] {
+            padding: 5px;
+            width: 100%;
+            max-width: 200px;
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
 
-input:required {
-  border: 3px solid grey;
-}
+        input:focus {
+            outline: none;
+        }
 
-label{
-  display: block;
-}
+        input:required {
+            border: 3px solid grey;
+        }
 
+        label{
+            display: block;
+        }
 
+        .car-license {
+            position: relative;
+            max-width: 200px;
+            background-color: #fddf26;
+            border-radius: 3px;
+            border: 1px solid #fddf26;
+            font-size: 1rem;
+            z-index: 1;
+        }
 
+        .car-license__country-code {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+            height: 100%;
+            width: 22px;
+            background-color: #4892cf;
+            color: white;
+            text-transform: uppercase;
+        }
 
-.car-license {
-      position: relative;
-      max-width: 200px;
-      background-color: #fddf26;
-      border-radius: 3px;
-      border: 1px solid #fddf26;
-      font-size: 1rem;
-      z-index: 1;
-    }
+        .car-license__form-control,
+        .car-license__output{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #fddf26;
+            padding: 5px 10px 5px 22px;
+            width: 100%;
+            height: 100%;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            font-weight: 600;
+            min-height: 3rem;
+        }
+        .car-license__form-control{
+            padding: 0 0 0 22px;
 
-.car-license__country-code {
-      position: absolute;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      top: 0;
-      left: 0;
-      z-index: 2;
-      border-top-left-radius: 3px;
-      border-bottom-left-radius: 3px;
-      height: 100%;
-      width: 22px;
-      background-color: #4892cf;
-      color: white;
-      text-transform: uppercase;
-    }
+        }
+        .car-license__input{
+            width: 100%;
+            padding: 0;
+            border: none;
+            background-color: #fddf26;
+            text-align: center;
+            text-transform: uppercase;
+            font-family: 'Roboto Condensed';
+            font-size: 2rem;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin:0;
 
-.car-license__form-control,
-.car-license__output{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color: #fddf26;
-  padding: 5px 10px 5px 22px;
-  width: 100%;
-  height: 100%;
-  font-size: 2rem;
-  letter-spacing: 2px;
-  font-weight: 600;
-  min-height: 3rem;
-}
-.car-license__form-control{
-  padding: 0 0 0 22px;
+        }
 
-}
-.car-license__input{
-  width: 100%;
-  padding: 0; 
-  border: none;
-  background-color: #fddf26;
-  text-align: center;
-  text-transform: uppercase;
-  font-family: 'Roboto Condensed';
-  font-size: 2rem;
-  letter-spacing: 2px;
-  font-weight: 600;
-  margin:0;
-  
-}
+        .html5-input {
+            display: inline-block;
+        }
 
-.html5-input {
-  display: inline-block;
-}
+        .html5-input:valid {
+            border: 3px solid green;
+        }
 
-.html5-input:valid {
-  border: 3px solid green;
-}
+        .html5-input:focus:invalid {
+            border: red solid 3px;
+        }
 
-.html5-input:focus:invalid {
-  border: red solid 3px;
-}
+        .valid-message{
+            position: relative;
+            display: none; /* ie/edge*/
 
-.html5-input:valid + .valid-message:before,
-.valid + .valid-message:before{
-/*  some css  */
-  position: absolute;
-  top: 5px;
-  content:'\2713';
-  color: green;
-  margin-left: 0.5rem;
+        }
+        .valid-message::before{
+            content: '';
+        }
 
-}
+        .html5-input:valid + .valid-message,
+        .valid + .valid-message{
+            display: inline-block; /* ie/edge*/
+        }
 
-.html5-input:valid + .valid-message:before {
-  position: static;
-  top: auto;
-  margin-left: auto;
-}
+        .html5-input:valid + .valid-message::before,
+        .valid + .valid-message::before{
+            /*  some css  */
+            position: absolute;
+            top: -25px;
+            content:'\2713';
+            color: green;
+            margin-left: 0.5rem;
 
+        }
 
-
+        .html5-input:valid + .valid-message::before {
+            position: static;
+            top: auto;
+            margin-left: auto;
+        }
