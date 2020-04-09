@@ -33,9 +33,11 @@ Er is een keuzemogelijkheid geboden voor drie syntactische oplossingen, function
 
 Het is ook mogelijk om HTML5 validatie middels het 'pattern' attribuut toe te passen, welke is toegevoegd in de broncode.
 
-## Unit test
+## Unit test in Jest/Jasmine
 
-kenteken-check-nl-class.js is 100% covered by unit testing using Jest. Jest is not part of the repository, kenteken-check-nl-class.spec.js contains the specs.
+kenteken-check-nl-class.js is 100% covered by unit testing using Jest or Jasmine. 
+`kenteken-check-nl-class.spec.js`will run in both frameworks without adaption of code.
+These test frameworks are not part of the repository, `kenteken-check-nl-class.spec.js` contains the specs.
 
 # English
 
