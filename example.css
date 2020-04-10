@@ -18,7 +18,7 @@
             padding: 5px;
             width: 100%;
             max-width: 200px;
-            font-size: 2rem;
+            font-size: 2.1rem;
             text-transform: uppercase;
         }
 
@@ -37,9 +37,9 @@
         .car-license {
             position: relative;
             max-width: 200px;
-            background-color: #fddf26;
+            background-color: #faca30;
             border-radius: 3px;
-            border: 1px solid #fddf26;
+            border: 1px solid #faca30;
             font-size: 1rem;
             z-index: 1;
         }
@@ -49,12 +49,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            top: 0;
-            left: 0;
+            top: -1px;
+            left: -1px;
             z-index: 2;
             border-top-left-radius: 3px;
             border-bottom-left-radius: 3px;
-            height: 100%;
+            height: 52px;
             width: 22px;
             background-color: #4892cf;
             color: white;
@@ -67,14 +67,14 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background-color: #fddf26;
-            padding: 5px 10px 5px 22px;
+            background-color: #faca30;
+            padding: 5px 10px 5px 30px;
             width: 100%;
             height: 100%;
-            font-size: 2rem;
+            font-size: 2.1rem;
             letter-spacing: 2px;
             font-weight: 600;
-            min-height: 3rem;
+            height: 50px;
         }
         .car-license__form-control{
             padding: 0 0 0 22px;
@@ -84,11 +84,11 @@
             width: 100%;
             padding: 0;
             border: none;
-            background-color: #fddf26;
+            background-color: #faca30;
             text-align: center;
             text-transform: uppercase;
             font-family: 'Roboto Condensed';
-            font-size: 2rem;
+           
             letter-spacing: 2px;
             font-weight: 600;
             margin:0;
@@ -109,7 +109,7 @@
 
         .valid-message{
             position: relative;
-            display: none; /* ie/edge*/
+            display: none;
 
         }
         .valid-message::before{
@@ -118,7 +118,7 @@
 
         .html5-input:valid + .valid-message,
         .valid + .valid-message{
-            display: inline-block; /* ie/edge*/
+            display: inline-block;
         }
 
         .html5-input:valid + .valid-message::before,
