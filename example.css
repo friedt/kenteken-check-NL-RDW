@@ -47,6 +47,7 @@
         .car-license__country-code {
             position: absolute;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             top: -1px;
@@ -55,8 +56,8 @@
             border-top-left-radius: 3px;
             border-bottom-left-radius: 3px;
             height: 52px;
-            width: 22px;
-            background-color: #4892cf;
+            width: 30px;
+            background-color: #011c95;
             color: white;
             text-transform: uppercase;
         }
