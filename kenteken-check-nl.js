@@ -78,11 +78,11 @@ Copyright (c) 2020 Pepijn Friederichs
             return 'XX-XX-XX';
         };
 
-        const getLicence = (licence, classV = 'valid') => {
-            if (typeof licence !== 'string') return;
+        const getLicense = (license, classV = 'valid') => {
+            if (typeof license !== 'string') return;
 
             classValid = classV;
-            let str = licence.toUpperCase()
+            let str = license.toUpperCase()
                 .trim()
                 .split('-')
                 .join(''); // trim whitespace / strip dashes
@@ -90,7 +90,7 @@ Copyright (c) 2020 Pepijn Friederichs
         };
 
         return {
-            getLicence,
+            getLicense,
         }
 
 
@@ -104,5 +104,5 @@ Copyright (c) 2020 Pepijn Friederichs
 
 
     inputElm.addEventListener('input', (e) => {
-        el.innerHTML = kentekenCheck.getLicence(e.target.value);
+        el.innerHTML = kentekenCheck.getLicense(e.target.value);
     });
