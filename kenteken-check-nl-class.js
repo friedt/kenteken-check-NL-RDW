@@ -1,6 +1,6 @@
-/* Ik heb deze kentekenCheck gebaseerd op de actuele formats(alle afgegeven kentekencombinaties) uitgegeven door de RDW, welke lijst is te vinden via bijgevoegde link. Voor een project had ik deze nodig en wilde het zelf even uitzoeken. De oplossing kan ook ingezet worden als HTML5 validation only in het 'pattern' attribuut, zie html.
+/* Ik heb deze kentekenCheck gebaseerd op de actuele formats(alle afgegeven kentekencombinaties) uitgegeven door de RDW, welke lijst is te vinden via bijgevoegde link. De oplossing kan ook ingezet worden als HTML5 validation only in het 'pattern' attribuut, zie html.
 De open data API vd rdw retourneert geen koppeltekens in het kenteken voor zover bekend, dus vandaar deze oplossing.
-De array van regex patronen correspondeert exact met de lijst van formats op de site vd RDW in bijgaande link.
+De array van regex patronen correspondeert met de lijst van formats op de site vd RDW in bijgaande link.
 De class declaratie 'KentekenCheck' kijkt of het een valide NL kenteken is, er worden geen klinkers gebruikt en geen tekens die de RDW voorschrijft. Kentekens met AA en CD zijn in deze functie niet meegenomen, de letters C en Q mogen niet meer vd overheid ivm interpretatie problemen en zijn wel meegenomen.
 Babel is nodig voor ondersteuning van legacy browsers zoals IE 10 /IE 11/Edge 13 etc.
 
