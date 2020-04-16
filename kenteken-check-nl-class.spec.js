@@ -1,7 +1,5 @@
 import {KentekenCheck} from "./kenteken-check-class";
 
-//jest.mock('./kenteken-check-class');
-
 
 describe('kenteken-check-class.js', function () {
 
@@ -34,9 +32,7 @@ describe('kenteken-check-class.js', function () {
         kt2.bindInputListener();
         kt2.getValue(e);
 
-
-        //jest.spyOn(kt2, 'license', 'get').mockReturnValue('GFYY54');
-        expect(kt2.license()).toEqual('GF-YY-54');
+        expect(kt2.formatLicense()).toEqual('GF-YY-54');
 
     });
 
@@ -55,13 +51,9 @@ describe('kenteken-check-class.js', function () {
             kt2.getValue(e);
 
             const re = new RegExp(arrRegEx[index]);
-            //jest.spyOn(kt2, 'license', 'get').mockReturnValue('GFYY54');
             const newStr = item.replace(re, '$1-$2-$3');
 
-
-            //kt2.license;
-
-            expect(kt2.license()).toEqual(newStr);
+            expect(kt2.formatLicense()).toEqual(newStr);
         });
 
     });
@@ -71,7 +63,7 @@ describe('kenteken-check-class.js', function () {
 
 
         //jest.spyOn(kt2, 'license', 'get').mockReturnValue('GFYY54');
-        expect(kt2.license()).toBeUndefined();
+        expect(kt2.formatLicense()).toBeUndefined();
 
     });
 
@@ -85,8 +77,6 @@ describe('kenteken-check-class.js', function () {
         kt2.bindInputListener();
         kt2.getValue(e);
 
-
-        //jest.spyOn(kt2, 'license', 'get').mockReturnValue('GFYY54');
         expect(kt2.output).toEqual(true);
 
     });
@@ -104,9 +94,7 @@ describe('kenteken-check-class.js', function () {
             kt2.bindInputListener();
             kt2.getValue(e);
 
-            //jest.spyOn(kt2, 'license', 'get').mockReturnValue('GFYY54');
-
-            expect(kt2.license()).toEqual('XX-XX-XX');
+            expect(kt2.formatLicense()).toEqual('XX-XX-XX');
         });
 
 
