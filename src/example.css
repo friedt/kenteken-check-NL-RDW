@@ -36,12 +36,13 @@
 
         .car-license {
             position: relative;
-            max-width: 210px;
+            max-width: 220px;
             background-color: #faca30;
             border-radius: 3px;
             border: 1px solid #faca30;
             font-size: 1rem;
             z-index: 1;
+            white-space: nowrap;
         }
 
         .car-license__country-code {
