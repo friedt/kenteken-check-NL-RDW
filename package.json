@@ -1,0 +1,26 @@
+{
+  "name": "kenteken-check-nl-rdw",
+  "version": "1.0.0",
+  "description": "rdw kentekencheck",
+  "main": "kenteken-check-nl-class.js",
+  "scripts": {
+    "test": "jest --verbose --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/friedt/kenteken-check-NL-RDW.git"
+  },
+  "author": "Pepijn Friederichs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/friedt/kenteken-check-NL-RDW/issues"
+  },
+  "homepage": "https://github.com/friedt/kenteken-check-NL-RDW#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "jest": "^25.3.0",
+    "jest-cli": "^25.3.0"
+  }
+}
