@@ -7,6 +7,13 @@ Licenseplate-check / kenteken-check based on valid formats released by dutch RDW
 
 # Toelichting
 
+## Installation 
+
+```shell
+$ npm install
+$ npm test
+
+
 ## JavaScript validatie oplossing
 
 Ik heb deze kentekenCheck gebaseerd op de actuele formats(kentekencombinaties) uitgegeven door de RDW(Rijksdienst voor het Wegverkeer) welke zijn te vinden via bijgevoegde link. De open data API vd RDW 
