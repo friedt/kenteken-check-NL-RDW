@@ -12,7 +12,7 @@ De functie Array.some is legacy browser proof.
 https://www.rdw.nl/particulier/voertuigen/auto/de-kentekenplaat/het-kenteken-op-de-plaat/uitleg-over-de-cijfers-en-letters-op-de-kentekenplaat
 
  note: 'HTML5 input patterns don't accept flags so to get lowercase letters we need to add the uppercase and lowercase range (e.g. A-Za-z).'
- 
+
  default className: 'valid' can be overwritten in function call
 
  default parameters: use babel when support legacy IE
@@ -32,11 +32,11 @@ Copyright (c) 2020 Pepijn Friederichs
         let classValid = '';
         let newStr = '';
         let index = 0;
-        const arrRegEx = ['^([A-Z]{2})([0-9]{2})([0-9]{2})$', // XX9999 
-               '^([0-9]{2})([0-9]{2})([A-Z]{2})$', // 9999XX 
-               '^([0-9]{2})([A-Z]{2})([0-9]{2})$', // 99XX99 
-               '^([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{2})$',// XX99XX 
-               '^([BDFGHJKLMNPRSTVWXYZ]{2})([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})$',// XXXX99 
+        const arrRegEx = ['^([A-Z]{2})([0-9]{2})([0-9]{2})$', // XX9999
+               '^([0-9]{2})([0-9]{2})([A-Z]{2})$', // 9999XX
+               '^([0-9]{2})([A-Z]{2})([0-9]{2})$', // 99XX99
+               '^([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{2})$',// XX99XX
+               '^([BDFGHJKLMNPRSTVWXYZ]{2})([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})$',// XXXX99
                '^([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{2})([BDFGHJKLMNPRSTVWXYZ]{2})$',// 99XXXX
                '^([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{3})([0-9]{1})$',// 99XXX9
                '^([0-9]{1})([BDFGHJKLMNPRSTVWXYZ]{3})([0-9]{2})$',// 9XXX99
@@ -82,7 +82,7 @@ Copyright (c) 2020 Pepijn Friederichs
             if (typeof license !== 'string') return;
 
             classValid = classV;
-            let str = license.toUpperCase()
+            const str = license.toUpperCase()
                 .trim()
                 .split('-')
                 .join(''); // trim whitespace / strip dashes
@@ -98,7 +98,7 @@ Copyright (c) 2020 Pepijn Friederichs
 
     // vervang het voorbeeld met een geldig kenteken zonder/met verkeerd geplaatste koppeltekens
     // bijvoorbeeld 12TTHJ HFFF43 of 1KGF55 of G234TR H222GG, HF-FF43 , G-234-TR
-    
+
 
     // om met performance rekening te houden kan wellicht het change event worden gebruikt
 

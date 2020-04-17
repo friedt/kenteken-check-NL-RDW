@@ -16,13 +16,13 @@ describe('kenteken-check-class.js', function () {
         document.body.insertAdjacentHTML('afterbegin', inputElm);
         document.body.insertAdjacentHTML('afterbegin', outputElm);
 
-        let kt = new KentekenCheck();
+        const kt = new KentekenCheck();
         arrRegEx = kt.arrRegEx;
 
     });
 
     it('method "formatLicense" should return string', function () {
-        let kt2 = new KentekenCheck('GFYY54', inputElm);
+        const kt2 = new KentekenCheck('GFYY54', inputElm);
         inputElm.value = 'GFYY54';
         const e = {
             'target': {
@@ -40,7 +40,7 @@ describe('kenteken-check-class.js', function () {
         // order of arr is important while corresponding index arrRegEx array
        const arr = ['AB5643', '8765AG', '56TE54', 'GF88YY', 'HFFF43', '12HHGG', '12PTT8', '1KHH39', 'HG123R', 'G123TT', 'SGJ12P'];
         arr.forEach((item, index) => {
-            let kt2 = new KentekenCheck(item, inputElm);
+            const kt2 = new KentekenCheck(item, inputElm);
 
             const e = {
                 'target': {
@@ -59,7 +59,7 @@ describe('kenteken-check-class.js', function () {
     });
 
     it('method "formatLicense" should return undefined when not string', function () {
-        let kt2 = new KentekenCheck(987, inputElm);
+        const kt2 = new KentekenCheck(987, inputElm);
 
 
         //jest.spyOn(kt2, 'license', 'get').mockReturnValue('GFYY54');
@@ -68,7 +68,7 @@ describe('kenteken-check-class.js', function () {
     });
 
     it('method "showInContainer" should display license in the container', function () {
-        let kt2 = new KentekenCheck('GFYY54', inputElm, outputElm, true);
+        const kt2 = new KentekenCheck('GFYY54', inputElm, outputElm, true);
         const e = {
             'target': {
                 value : 'GFYY54'
@@ -84,7 +84,7 @@ describe('kenteken-check-class.js', function () {
     it('method "formatLicense" should return a invalid sign XX-XX-XX', function () {
        const arr = ['VVD56T', 'SGP56T', '12359T', 'SD6677', 'GHFRP5', '987JK9', 'U123TT', 'PVV23R', '65F9F9', 'SS9988'];
         arr.forEach(item => {
-            let kt2 = new KentekenCheck(item, inputElm);
+            const kt2 = new KentekenCheck(item, inputElm);
 
             const e = {
                 'target': {

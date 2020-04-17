@@ -50,7 +50,7 @@ export class KentekenCheck {
     formatLicense(){
         if (typeof this.kenteken !== 'string') return;
 
-        let str = this.kenteken.toUpperCase()
+        const str = this.kenteken.toUpperCase()
             .trim()
             .split('-')
             .join(''); // trim whitespace / strip dashes
@@ -79,7 +79,7 @@ export class KentekenCheck {
 
         // based on rdw demands
         // returns true immediately when found match : legacy browser proof IE 9/10/11, no polyfill needed
-        let matchLicense = this.matchLicense(str);
+        const matchLicense = this.matchLicense(str);
         //console.log('match', matchLicense);
         if (matchLicense){
             this.showInContainer(this.newStr);
