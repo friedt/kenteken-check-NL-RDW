@@ -1,0 +1,17 @@
+{
+  "plugins": [
+
+  ],
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": [ "> 1%", "last 2 versions", "Edge >= 15", "IE 10", "ios > 10" ],
+          "node": "current"
+        }
+      }
+    ]
+  ]
+}
+

@@ -1,4 +1,4 @@
-import {KentekenCheck} from "./kenteken-check-class";
+import {KentekenCheck} from './kenteken-check-nl-class';
 
 
 describe('kenteken-check-class.js', function () {
@@ -38,7 +38,7 @@ describe('kenteken-check-class.js', function () {
 
     it('method "formatLicense" should return valid string', function () {
         // order of arr is important while corresponding index arrRegEx array
-       const arr = ['AB5643', '8765AG', '56TE54', 'GF88YY', 'HFFF43', '12HHGG', '12PTT8', '1KHH39', 'HG123R', 'G123TT', 'TRF12P'];
+       const arr = ['AB5643', '8765AG', '56TE54', 'GF88YY', 'HFFF43', '12HHGG', '12PTT8', '1KHH39', 'HG123R', 'G123TT', 'SGJ12P'];
         arr.forEach((item, index) => {
             let kt2 = new KentekenCheck(item, inputElm);
 
@@ -82,7 +82,7 @@ describe('kenteken-check-class.js', function () {
     });
 
     it('method "formatLicense" should return a invalid sign XX-XX-XX', function () {
-       const arr = ['VVD56T', '12359T', 'SD6677', 'GHFRP5', '987JK9', 'U123TT', 'PVV23R', '65F9F9', 'SS9988'];
+       const arr = ['VVD56T', 'SGP56T', '12359T', 'SD6677', 'GHFRP5', '987JK9', 'U123TT', 'PVV23R', '65F9F9', 'SS9988'];
         arr.forEach(item => {
             let kt2 = new KentekenCheck(item, inputElm);
 

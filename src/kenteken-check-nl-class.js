@@ -10,16 +10,16 @@ Vanaf serie 11: PVV, SGP en VVD verboden
 De function Array.some is legacy browser proof, Array.find of Array.findIndex, maar dan is een polyfill nodig, een 'for' loop met een break is ook een oplossing.
 https://www.rdw.nl/particulier/voertuigen/auto/de-kentekenplaat/het-kenteken-op-de-plaat/uitleg-over-de-cijfers-en-letters-op-de-kentekenplaat
  note: 'HTML5 input patterns don't accept flags so to get lowercase letters we need to add the uppercase and lowercase range (e.g. A-Za-z).'
- 
+
  default parameters : use babel when support legacy IE
  https://babeljs.io/docs/en/babel-plugin-transform-parameters
- 
+
 MIT License
 Copyright (c) 2020 Pepijn Friederichs
 */
 
-const outputElm = document.getElementById('kenteken');
-const inputElm = document.getElementById('input-kenteken');
+// const outputElm = document.getElementById('kenteken');
+// const inputElm = document.getElementById('input-kenteken');
 
 
 // start class KentekenCheck
@@ -32,11 +32,11 @@ export class KentekenCheck {
         this.inputElm = inputElm;
         this.outputElm = outputElm;
         this.classValid = classValid;
-        this.arrRegEx = ['^([A-Z]{2})([0-9]{2})([0-9]{2})$', // XX9999 
-               '^([0-9]{2})([0-9]{2})([A-Z]{2})$', // 9999XX 
-               '^([0-9]{2})([A-Z]{2})([0-9]{2})$', // 99XX99 
-               '^([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{2})$',// XX99XX 
-               '^([BDFGHJKLMNPRSTVWXYZ]{2})([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})$',// XXXX99 
+        this.arrRegEx = ['^([A-Z]{2})([0-9]{2})([0-9]{2})$', // XX9999
+               '^([0-9]{2})([0-9]{2})([A-Z]{2})$', // 9999XX
+               '^([0-9]{2})([A-Z]{2})([0-9]{2})$', // 99XX99
+               '^([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{2})$',// XX99XX
+               '^([BDFGHJKLMNPRSTVWXYZ]{2})([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})$',// XXXX99
                '^([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{2})([BDFGHJKLMNPRSTVWXYZ]{2})$',// 99XXXX
                '^([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{3})([0-9]{1})$',// 99XXX9
                '^([0-9]{1})([BDFGHJKLMNPRSTVWXYZ]{3})([0-9]{2})$',// 9XXX99
@@ -95,7 +95,7 @@ export class KentekenCheck {
             this.outputElm.innerHTML = str;
         }
     }
-    
+
     getValue(e){
         if (e.target.value.length >= 6){
             this.kenteken = e.target.value;
@@ -116,7 +116,7 @@ export class KentekenCheck {
 
 // om met performance rekening te houden kan ook het change event worden gebruikt
 
-let kt = new KentekenCheck('S007JB', inputElm, outputElm, true);
-kt.formatLicense();
-kt.bindInputListener();
+// let kt = new KentekenCheck('S007JB', inputElm, outputElm, true);
+// kt.formatLicense();
+// kt.bindInputListener();
 
