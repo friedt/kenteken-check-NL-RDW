@@ -16,14 +16,6 @@
 
         body {
             font-family: 'Roboto Condensed';
-           
-        }
-
-        input[type="text"] {
-            padding: 5px;
-            width: 100%;
-            max-width: 210px;
-            text-transform: uppercase;
         }
 
         input:focus {
@@ -90,7 +82,7 @@
             border: none;
             background-color: #faca30;
             text-align: center;
-            text-transform: uppercase;
+            text-transform: inherit;
             font-family: inherit;
             font-size: inherit;
             margin:0;
@@ -100,6 +92,9 @@
         .html5-input {
             display: inline-block;
             font-size: 1.9rem;
+            max-width: 210px;
+            padding: 5px;
+            text-transform: uppercase;
         }
 
         .html5-input:valid {
