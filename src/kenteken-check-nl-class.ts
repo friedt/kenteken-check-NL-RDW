@@ -42,8 +42,8 @@ class KentekenCheck {
       this.output = output;
       this.kenteken = kenteken;
       this.valid = false;
-      this.inputElm = inputElm;
-      this.outputElm = outputElm;
+      this.inputElm = inputElm || null;
+      this.outputElm = outputElm || null;
       this.classValid = classValid;
       this.arrRegEx = ['^([A-Z]{2})([0-9]{2})([0-9]{2})$', // XX9999
           '^([0-9]{2})([0-9]{2})([A-Z]{2})$', // 9999XX

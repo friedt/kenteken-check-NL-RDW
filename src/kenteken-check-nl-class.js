@@ -25,7 +25,7 @@ Copyright (c) 2020 Pepijn Friederichs
 // start class KentekenCheck
 export class KentekenCheck {
 
-    constructor(kenteken, inputElm, outputElm, output = false, classValid = 'valid') {
+    constructor(kenteken, inputElm = null, outputElm = null, output = false, classValid = 'valid') {
         this.newStr = '';
         this.output = output;
         this.kenteken = kenteken;
@@ -67,8 +67,10 @@ export class KentekenCheck {
 
             // match on regex pattern
             if (res === true && resLegal === true) {
-                this.inputElm.value = str.replace(re, '$1-$2-$3');
-                this.inputElm.classList.add(this.classValid);
+                if (this.inputElm !== null) {
+                    this.inputElm.value = str.replace(re, '$1-$2-$3');
+                    this.inputElm.classList.add(this.classValid);
+                }
                 this.newStr = str.replace(re, '$1-$2-$3');
                 //console.log('new', this.newStr);
                 return true;
@@ -87,13 +89,15 @@ export class KentekenCheck {
             this.showInContainer(this.newStr);
             return this.newStr;
         }
-        this.inputElm.classList.remove(this.classValid);
+        if (this.inputElm !== null) {
+            this.inputElm.classList.remove(this.classValid);
+        }
         this.showInContainer('XX-XX-XX')
         return 'XX-XX-XX';
     }
 
     showInContainer(str) {
-        if (this.output) {
+        if (this.output && this.outputElm !== null) {
             this.outputElm.innerHTML = str;
         }
     }
@@ -107,8 +111,9 @@ export class KentekenCheck {
     }
 
     bindInputListener(event = 'input') {
-        this.inputElm.addEventListener(event, this.getValue.bind(this));
-
+        if (this.inputElm !== null){
+            this.inputElm.addEventListener(event, this.getValue.bind(this));
+        }
     }
 
 }
