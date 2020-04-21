@@ -28,6 +28,7 @@ class KentekenCheck {
   newStr: string;
   index: number;
   kenteken: string;
+  valid: boolean;
   inputElm: HTMLInputElement;
   output: boolean;
   outputElm: HTMLDivElement;
@@ -40,6 +41,7 @@ class KentekenCheck {
       this.index = 0;
       this.output = output;
       this.kenteken = kenteken;
+      this.valid = false;
       this.inputElm = inputElm;
       this.outputElm = outputElm;
       this.classValid = classValid;
@@ -93,6 +95,7 @@ class KentekenCheck {
         const matchLicense = this.matchLicense(str);
         //console.log('match', matchLicense);
         if (matchLicense) {
+            this.valid = matchLicense;
             this.showInContainer(this.newStr);
             return this.newStr;
         }
@@ -127,12 +130,13 @@ class KentekenCheck {
 // om met performance rekening te houden kan wellicht het change event worden gebruikt
 
 // let kt2 = new KentekenCheck('GFYY54', inputElm);
-// kt2.license;
+// kt2.formatLicense();
+// kt2.valid;
 //
 // inputElm.addEventListener('input', (e) => {
 //
 //   let kt = new KentekenCheck((e.target as HTMLInputElement).value, inputElm);
-//   el.innerHTML = kt.license as string;
+//   el.innerHTML = kt.formatLicense() as string;
 //
 //  });
 

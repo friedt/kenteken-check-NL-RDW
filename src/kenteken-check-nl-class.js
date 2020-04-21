@@ -29,6 +29,7 @@ export class KentekenCheck {
         this.newStr = '';
         this.output = output;
         this.kenteken = kenteken;
+        this.valid = false;
         this.inputElm = inputElm;
         this.outputElm = outputElm;
         this.classValid = classValid;
@@ -82,6 +83,7 @@ export class KentekenCheck {
         const matchLicense = this.matchLicense(str);
         //console.log('match', matchLicense);
         if (matchLicense) {
+            this.valid = matchLicense;
             this.showInContainer(this.newStr);
             return this.newStr;
         }
@@ -118,5 +120,6 @@ export class KentekenCheck {
 
 // let kt = new KentekenCheck('S007JB', inputElm, outputElm, true);
 // kt.formatLicense();
+// kt.valid
 // kt.bindInputListener();
 
