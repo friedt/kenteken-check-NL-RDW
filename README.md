@@ -13,6 +13,7 @@ Licenseplate-check / kenteken-check based on valid formats released by dutch RDW
 $ npm install
 $ npm test
 $ npm run eslint
+$ tsc 
 ```
 
 
