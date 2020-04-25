@@ -38,11 +38,7 @@ Er is een keuzemogelijkheid geboden voor drie syntactische oplossingen, function
 - function (IIFE) 
 - class declaratie (es6 module)
 - TypeScript
-
-## TypeScript
-
-Hoewel typescript blijkbaar/schijnbaar veel wordt gebruikt ben ik, na wat ik zie en hoor, niet overtuigd van de meerwaarde.  
-Voor de 'vorm' heb ik wel een versie toegevoegd. 
+ 
 
 ## HTML5 validatie oplosssing
 
