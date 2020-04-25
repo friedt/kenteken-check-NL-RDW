@@ -119,7 +119,8 @@ label {
 }
 
 .html5-input:valid + .valid-message,
-.valid + .valid-message {
+.valid + .valid-message,
+.invalid + .valid-message {
     display: inline-block;
 }
 
@@ -130,6 +131,17 @@ label {
     top: -25px;
     content: '\2713';
     color: green;
+    margin-left: 0.5rem;
+    font-size: 2rem;
+
+}
+
+.invalid + .valid-message::before{
+    /*  some css  */
+    position: absolute;
+    top: -25px;
+    content:'\2717';
+    color: red;
     margin-left: 0.5rem;
     font-size: 2rem;
 
