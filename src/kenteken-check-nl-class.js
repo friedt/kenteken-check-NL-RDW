@@ -29,6 +29,7 @@ export class KentekenCheck {
         this.newStr = '';
         this.output = output;
         this.kenteken = kenteken;
+        this.index = 0;
         this.valid = false;
         this.inputElm = inputElm;
         this.outputElm = outputElm;
@@ -59,7 +60,7 @@ export class KentekenCheck {
     }
 
     matchLicense(str) {
-        return this.arrRegEx.some(regEx => {
+        return this.arrRegEx.some((regEx, i) => {
 
             const re = new RegExp(regEx);
             const res = re.test(str);
@@ -67,12 +68,7 @@ export class KentekenCheck {
 
             // match on regex pattern
             if (res === true && resLegal === true) {
-                if (this.inputElm !== null) {
-                    this.inputElm.value = str.replace(re, '$1-$2-$3');
-                    this.inputElm.classList.add(this.classValid);
-                }
-                this.newStr = str.replace(re, '$1-$2-$3');
-                //console.log('new', this.newStr);
+                this.index = i;
                 return true;
             }
         });
@@ -83,15 +79,22 @@ export class KentekenCheck {
         // based on rdw demands
         // returns true immediately when found match : legacy browser proof IE 9/10/11, no polyfill needed
         const matchLicense = this.matchLicense(str);
-        //console.log('match', matchLicense);
+
         if (matchLicense) {
             this.valid = matchLicense;
+            const re = new RegExp(this.arrRegEx[this.index]);
+            if (this.inputElm !== null) {
+                this.inputElm.value = str.replace(re, '$1-$2-$3');
+                this.inputElm.classList.add(this.classValid);
+            }
+            this.newStr = str.replace(re, '$1-$2-$3');
             this.showInContainer(this.newStr);
             return this.newStr;
         }
         if (this.inputElm !== null) {
             this.inputElm.classList.remove(this.classValid);
         }
+        this.valid = false;
         this.showInContainer('XX-XX-XX')
         return 'XX-XX-XX';
     }
