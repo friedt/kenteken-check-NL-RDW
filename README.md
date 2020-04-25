@@ -40,7 +40,7 @@ Er is een keuzemogelijkheid geboden voor drie syntactische oplossingen, function
 
 ## TypeScript
 
-Hoewel wel typescript blijkbaar/schijnbaar veel wordt gebruikt ben ik niet overtuigd van de meerwaarde. 
+Hoewel typescript blijkbaar/schijnbaar veel wordt gebruikt ben ik niet overtuigd van de meerwaarde. 
 Voor de 'vorm' heb ik een versie toegevoegd. 
 
 ## HTML5 validatie oplosssing
