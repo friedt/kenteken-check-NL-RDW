@@ -134,7 +134,6 @@ class KentekenCheck {
 
 // vervang het voorbeeld met een geldig kenteken zonder/met verkeerd geplaatste koppeltekens
 // bijvoorbeeld 12TTHJ HFFF43 of 1KGF55 of G234TR H222GG, HF-FF43 , G-234-TR
-// om met performance rekening te houden kan wellicht het change event worden gebruikt
 
 // let kt2 = new KentekenCheck('GFYY54', inputElm);
 // kt2.formatLicense();
