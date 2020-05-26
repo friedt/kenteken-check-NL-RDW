@@ -7,8 +7,6 @@ Verboden combinaties: GVD, KKK, KVT, LPF, NSB, PKK, PSV, TBS, SA, SS en SD (ook 
 
 serie 11: PVV, SGP en VVD verboden
 
-De functie Array.some is legacy browser proof, Array.find of Array.findIndex mogelijk, maar dan is een polyfill nodig, een 'for' loop met een break is ook een oplossing.
-
 https://www.rdw.nl/particulier/voertuigen/auto/de-kentekenplaat/het-kenteken-op-de-plaat/uitleg-over-de-cijfers-en-letters-op-de-kentekenplaat
 
 note: 'HTML5 input patterns don't accept flags so to get lowercase letters we need to add the uppercase and lowercase range (e.g. A-Za-z).'
