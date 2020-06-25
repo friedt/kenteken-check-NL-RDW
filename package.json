@@ -1,5 +1,5 @@
 {
-  "name": "kenteken-check-nl-rdw-version1",
+  "name": "rdw-kenteken-check",
   "version": "1.0.0",
   "description": "rdw kentekencheck",
   "main": "src/kenteken-check-nl-class.js",
@@ -12,7 +12,7 @@
     "url": "git+https://github.com/friedt/kenteken-check-NL-RDW.git"
   },
   "author": "Pepijn Friederichs",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/friedt/kenteken-check-NL-RDW/issues"
   },
