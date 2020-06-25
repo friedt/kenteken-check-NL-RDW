@@ -16,14 +16,7 @@ $ npm run eslint
 $ tsc 
 ```
 
-## Import as npm module in your project
 
-```shell
-
-npm install kenteken-check-nl-rdw-version1 --save
-
-import {KentekenCheck} from 'kenteken-check-nl-rdw-version1';
-```
 
 ## Example
 
