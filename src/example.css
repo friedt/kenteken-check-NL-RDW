@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: kenteken;
-    src: url('https://frontend-developer.eu/fonts/kenteken.ttf');
+    src: url('./kenteken.ttf');
     /*  https://www.dafont.com/kenteken.font  */
 }
 

@@ -16,6 +16,10 @@ $ npm run eslint
 $ tsc 
 ```
 
+## Example
+
+Start een locale webserver en open index.html in een browser
+Moderne browsers ondersteunen es6 modules (import, export, <script type="module">) out of the box, dus voor legacy browsers moet je babel/webpack gebruiken.
 
 ## JavaScript validatie oplossing
 
