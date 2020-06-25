@@ -19,7 +19,23 @@ $ tsc
 ## Example
 
 Start een locale webserver en open index.html in een browser
-Moderne browsers ondersteunen es6 modules (import, export, <script type="module">) out of the box, dus voor legacy browsers moet je babel/webpack gebruiken.
+Moderne browsers ondersteunen es6 modules (import, export) out of the box, dus voor legacy browsers moet je babel/webpack gebruiken.
+
+```
+import {KentekenCheck} from './kenteken-check-nl-class.js';
+
+
+const outputElm = document.getElementById('kenteken');
+const inputElm = document.getElementById('input-kenteken');
+
+const kt = new KentekenCheck('', inputElm, outputElm, true);
+kt.formatLicense();
+kt.bindInputListener();
+
+// format only
+const kt2 = new KentekenCheck('JFK01P')
+outputElm.innerHTML = kt2.formatLicense();
+```
 
 ## JavaScript validatie oplossing
 
