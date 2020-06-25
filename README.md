@@ -16,7 +16,14 @@ $ npm run eslint
 $ tsc 
 ```
 
+## Import as npm module in your project
 
+```shell
+
+npm install rdw-kenteken-check --save
+
+import {KentekenCheck} from 'rdw-kenteken-check';
+```
 
 ## Example
 
