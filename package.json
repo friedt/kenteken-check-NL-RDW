@@ -2,7 +2,7 @@
   "name": "kenteken-check-nl-rdw",
   "version": "1.0.0",
   "description": "rdw kentekencheck",
-  "main": "kenteken-check-nl-class.js",
+  "main": "src/kenteken-check-nl-class.js",
   "scripts": {
     "test": "jest --verbose --coverage",
     "eslint": "eslint src/*.js "
