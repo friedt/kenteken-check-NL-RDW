@@ -1,5 +1,5 @@
 {
-  "name": "kenteken-check-nl-rdw",
+  "name": "kenteken-check-nl-rdw-version1",
   "version": "1.0.0",
   "description": "rdw kentekencheck",
   "main": "src/kenteken-check-nl-class.js",
