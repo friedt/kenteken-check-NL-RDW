@@ -24,7 +24,7 @@ npm install rdw-kenteken-check --save
 
 import {KentekenCheck} from 'rdw-kenteken-check'
 ```
-# Import typescript as npm module
+## Import typescript as npm module
 ```shell
 import {KentekenCheck} from 'rdw-kenteken-check/src/kenteken-check-nl-class'
 ```
