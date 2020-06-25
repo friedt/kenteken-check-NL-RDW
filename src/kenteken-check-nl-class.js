@@ -17,14 +17,10 @@ MIT License
 Copyright (c) 2020 Pepijn Friederichs
 */
 
-// const outputElm = document.getElementById('kenteken');
-// const inputElm = document.getElementById('input-kenteken');
 
-
-// start class KentekenCheck
 export class KentekenCheck {
 
-    constructor(kenteken, inputElm = null, outputElm = null, output = false, classValid = 'valid') {
+    constructor(kenteken = '', inputElm = null, outputElm = null, output = false, classValid = 'valid') {
         this.newStr = '';
         this.output = output;
         this.kenteken = kenteken;
@@ -119,14 +115,4 @@ export class KentekenCheck {
     }
 
 }
-
-// vervang het voorbeeld met een geldig kenteken zonder/met verkeerd geplaatste koppeltekens
-// bijvoorbeeld 12TTHJ HFFF43 of 1KGF55 of G234TR H222GG, HF-FF43 , G-234-TR
-
-// om met performance rekening te houden kan ook het change event worden gebruikt
-
-// let kt = new KentekenCheck('S007JB', inputElm, outputElm, true);
-// kt.formatLicense();
-// kt.valid
-// kt.bindInputListener();
 
