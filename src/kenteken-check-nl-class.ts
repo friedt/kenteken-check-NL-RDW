@@ -17,47 +17,47 @@ MIT License
 Copyright (c) 2020 Pepijn Friederichs
 */
 
-const el = document.getElementById('kenteken') as HTMLDivElement;
-const inputElm = document.getElementById('input-kenteken') as HTMLInputElement;
+// const el = document.getElementById('kenteken') as HTMLDivElement;
+// const inputElm = document.getElementById('input-kenteken') as HTMLInputElement;
 
 
 // start class KentekenCheck
-class KentekenCheck {
+export class KentekenCheck {
 
-  newStr: string;
-  index: number;
-  kenteken: string;
-  valid: boolean;
-  inputElm: HTMLInputElement;
-  output: boolean;
-  outputElm: HTMLDivElement;
-  classValid: string;
-  arrRegEx: Array<string>;
-  forbiddenCharacters: RegExp;
+    newStr: string;
+    index: number;
+    kenteken: string;
+    valid: boolean;
+    inputElm: HTMLInputElement | undefined;
+    output: boolean;
+    outputElm: HTMLDivElement | undefined;
+    classValid: string;
+    arrRegEx: Array<string>;
+    forbiddenCharacters: RegExp;
 
-  constructor(kenteken: string, inputElm: HTMLInputElement, outputElm: HTMLDivElement, output = false, classValid = 'valid'){
-      this.newStr = '';
-      this.index = 0;
-      this.output = output;
-      this.kenteken = kenteken;
-      this.valid = false;
-      this.inputElm = inputElm || null;
-      this.outputElm = outputElm || null;
-      this.classValid = classValid;
-      this.arrRegEx = ['^([A-Z]{2})([0-9]{2})([0-9]{2})$', // XX9999
-          '^([0-9]{2})([0-9]{2})([A-Z]{2})$', // 9999XX
-          '^([0-9]{2})([A-Z]{2})([0-9]{2})$', // 99XX99
-          '^([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{2})$',// XX99XX
-          '^([BDFGHJKLMNPRSTVWXYZ]{2})([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})$',// XXXX99
-          '^([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{2})([BDFGHJKLMNPRSTVWXYZ]{2})$',// 99XXXX
-          '^([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{3})([0-9]{1})$',// 99XXX9
-          '^([0-9]{1})([BDFGHJKLMNPRSTVWXYZ]{3})([0-9]{2})$',// 9XXX99
-          '^([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{3})([BDFGHJKLMNPRSTVWXYZ]{1})$',// XX999X
-          '^([BDFGHJKLMNPRSTVWXYZ]{1})([0-9]{3})([BDFGHJKLMNPRSTVWXYZ]{2})$',// X999XX
-          '^((?!PVV|VVD|SGP)[BDFGHJKLMNPRSTVWXYZ]{3})([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{1})$'];// XXX99X
+    constructor(kenteken: string, inputElm?: HTMLInputElement, outputElm?: HTMLDivElement, output = false, classValid = 'valid'){
+        this.newStr = '';
+        this.index = 0;
+        this.output = output;
+        this.kenteken = kenteken;
+        this.valid = false;
+        this.inputElm = inputElm;
+        this.outputElm = outputElm;
+        this.classValid = classValid;
+        this.arrRegEx = ['^([A-Z]{2})([0-9]{2})([0-9]{2})$', // XX9999
+            '^([0-9]{2})([0-9]{2})([A-Z]{2})$', // 9999XX
+            '^([0-9]{2})([A-Z]{2})([0-9]{2})$', // 99XX99
+            '^([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{2})$',// XX99XX
+            '^([BDFGHJKLMNPRSTVWXYZ]{2})([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})$',// XXXX99
+            '^([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{2})([BDFGHJKLMNPRSTVWXYZ]{2})$',// 99XXXX
+            '^([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{3})([0-9]{1})$',// 99XXX9
+            '^([0-9]{1})([BDFGHJKLMNPRSTVWXYZ]{3})([0-9]{2})$',// 9XXX99
+            '^([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{3})([BDFGHJKLMNPRSTVWXYZ]{1})$',// XX999X
+            '^([BDFGHJKLMNPRSTVWXYZ]{1})([0-9]{3})([BDFGHJKLMNPRSTVWXYZ]{2})$',// X999XX
+            '^((?!PVV|VVD|SGP)[BDFGHJKLMNPRSTVWXYZ]{3})([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{1})$'];// XXX99X
 
-      this.forbiddenCharacters = /^((?!GVD|KKK|KVT|LPF|NSB|PKK|PSV|TBS|SS|SD).){6}$/;
-  }
+        this.forbiddenCharacters = /^((?!GVD|KKK|KVT|LPF|NSB|PKK|PSV|TBS|SS|SD).){6}$/;
+    }
 
     formatLicense() {
         if (typeof this.kenteken !== 'string') return;
@@ -93,7 +93,7 @@ class KentekenCheck {
         if (matchLicense) {
             this.valid = matchLicense;
             const re = new RegExp(this.arrRegEx[this.index]);
-            if (this.inputElm !== null) {
+            if (this.inputElm !== undefined) {
                 this.inputElm.value = str.replace(re, '$1-$2-$3');
                 this.inputElm.classList.add(this.classValid);
             }
@@ -101,7 +101,7 @@ class KentekenCheck {
             this.showInContainer(this.newStr);
             return this.newStr;
         }
-        if (this.inputElm !== null) {
+        if (this.inputElm !== undefined) {
             this.inputElm.classList.remove(this.classValid);
         }
         this.valid = false;
@@ -110,7 +110,7 @@ class KentekenCheck {
     }
 
     showInContainer(str: string) {
-        if (this.output && this.outputElm !== null) {
+        if (this.output && this.outputElm !== undefined) {
             this.outputElm.innerHTML = str;
         }
     }
@@ -124,26 +124,24 @@ class KentekenCheck {
     }
 
     bindInputListener(event = 'input') {
-        if (this.inputElm !== null) {
+        if (this.inputElm !== undefined) {
             this.inputElm.addEventListener(event, this.getValue.bind(this));
         }
     }
 
 }
 
-// vervang het voorbeeld met een geldig kenteken zonder/met verkeerd geplaatste koppeltekens
-// bijvoorbeeld 12TTHJ HFFF43 of 1KGF55 of G234TR H222GG, HF-FF43 , G-234-TR
-
-// let kt2 = new KentekenCheck('GFYY54', inputElm);
-// kt2.formatLicense();
-// kt2.valid;
+// const outputElm = document.getElementById('kenteken') as HTMLDivElement;
+// const inputElm = document.getElementById('input-kenteken') as HTMLInputElement;
 //
-// inputElm.addEventListener('input', (e) => {
 //
-//   let kt = new KentekenCheck((e.target as HTMLInputElement).value, inputElm);
-//   el.innerHTML = kt.formatLicense() as string;
+// const kt = new KentekenCheck('S007JB', inputElm, outputElm, true);
+// kt.formatLicense();
+// kt.bindInputListener();
 //
-//  });
+// // format only
+// const kt2 = new KentekenCheck('JFK01P');
+// outputElm.innerHTML = kt2.formatLicense() as string;
 
 
 

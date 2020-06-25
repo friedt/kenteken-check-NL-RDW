@@ -22,7 +22,11 @@ $ tsc
 
 npm install rdw-kenteken-check --save
 
-import {KentekenCheck} from 'rdw-kenteken-check';
+import {KentekenCheck} from 'rdw-kenteken-check'
+```
+# Import typescript as npm module
+```shell
+import {KentekenCheck} from 'rdw-kenteken-check/src/kenteken-check-nl-class'
 ```
 
 ## Example
@@ -45,7 +49,16 @@ kt.bindInputListener();
 const kt2 = new KentekenCheck('JFK01P')
 outputElm.innerHTML = kt2.formatLicense();
 ```
+## Webpack builds
+Om een build bundle te creëeren via Webpack zijn er twee mogelijkheden:
+- build typescript
+- build javascript
 
+```shell
+$ npm run build
+$ npm run build-ts
+```
+copy+paste de bundle.js / bundle-ts.js in de html om het resultaat te testen
 ## JavaScript validatie oplossing
 
 Ik heb deze kentekenCheck gebaseerd op de actuele formats(kentekencombinaties) uitgegeven door de RDW(Rijksdienst voor het Wegverkeer) welke zijn te vinden via bijgevoegde link. De open data API vd RDW 
