@@ -18,6 +18,8 @@ $ tsc
 
 ## Import as npm module in your project
 
+Om browser import issues te voorkomen van npm modules is het aanbevolen om een module bundler zoals Webpack te gebruiken.
+
 ```shell
 
 npm install rdw-kenteken-check --save
