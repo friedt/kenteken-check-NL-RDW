@@ -33,7 +33,7 @@ import {KentekenCheck} from 'rdw-kenteken-check/src/kenteken-check-nl-class'
 
 ## Example
 
-Start een locale webserver en open index.html in een browser
+Start lokaal een webserver en open index.html in een browser
 Moderne browsers ondersteunen es6 modules (import, export) out of the box, dus voor legacy browsers moet je babel/webpack gebruiken. 
 
 ```shell
@@ -86,9 +86,9 @@ Het is ook mogelijk om HTML5 validatie middels het 'pattern' attribuut toe te pa
 
 ## Unit test in Jest/Jasmine
 
-kenteken-check-nl-class.js is 100% covered by unit testing using Jest or Jasmine. 
-`kenteken-check-nl-class.spec.js`will run in both frameworks without adaption of code.
-Jest is part of the repository, `kenteken-check-nl-class.spec.js` contains the specs.
+kenteken-check-nl-class.js is 100% gecovered door unit testing met gebruik van Jest or Jasmine. 
+`kenteken-check-nl-class.spec.js` runt in beide frameworks zonder aanpassingen.
+Jest is onderdeel van de repository, `kenteken-check-nl-class.spec.js` bevat de specs.
 
 # English
 
