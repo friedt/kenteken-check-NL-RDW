@@ -1,25 +1,4 @@
-/* Ik heb deze kentekenCheck gebaseerd op de actuele formats(alle afgegeven kentekencombinaties), uitgegeven door de RDW, welke lijst is te vinden via bijgevoegde link. De oplossing kan ook ingezet worden als HTML5 validation only in het 'pattern' attribuut, zie html.
-De open data API vd RDW retourneert geen koppeltekens in het kenteken voor zover bekend, dus vandaar deze oplossing.
-De array van regex patronen correspondeert met de lijst van formats op de site vd RDW in bijgaande link.
-De functie 'kentekenCheck' kijkt of het een valide NL kenteken is, er worden in de latere series geen klinkers gebruikt en geen tekens die de RDW voorschrijft. Kentekens met AA en CD zijn in deze functie niet meegenomen, de letters C en Q mogen niet meer vd overheid ivm interpretatie problemen en zijn wel meegenomen.
 
-Verboden combinaties: GVD, KKK, KVT, LPF, NSB, PKK, PSV, TBS, SA, SS en SD (ook niet in lettercombinaties met 3 letters)
-
-serie 11: PVV, SGP en VVD verboden
-
-https://www.rdw.nl/particulier/voertuigen/auto/de-kentekenplaat/het-kenteken-op-de-plaat/uitleg-over-de-cijfers-en-letters-op-de-kentekenplaat
-
-note: 'HTML5 input patterns don't accept flags so to get lowercase letters we need to add the uppercase and lowercase range (e.g. A-Za-z).'
-
-default className: 'valid' can be overwritten in function call
-
-default parameters: use babel when support legacy IE
-https://babeljs.io/docs/en/babel-plugin-transform-parameters
-
-MIT License
-Copyright (c) 2020 Pepijn Friederichs
-
-*/
 
 const el = document.getElementById('kenteken');
 const inputElm = document.getElementById('input-kenteken');
