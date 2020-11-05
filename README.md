@@ -77,7 +77,7 @@ https://www.rdw.nl/particulier/voertuigen/auto/de-kentekenplaat/het-kenteken-op-
 Er is een keuzemogelijkheid geboden voor drie syntactische oplossingen, functionaliteit is hetzelfde:
 - function (IIFE) 
 - class declaratie (es6 module)
-- TypeScript
+- TypeScript (class declaratie / es6 module)
  
 
 ## HTML5 validatie oplosssing
