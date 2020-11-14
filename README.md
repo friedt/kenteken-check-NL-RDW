@@ -3,7 +3,7 @@ NL Kenteken-check formats 2020 RDW written in JavaScript, TypeScript or HTML5
 
 # Information
 
-Licenseplate-check / kenteken-check based on valid formats released by dutch RDW
+Licenseplate-check / kenteken-check based on valid formats which were released by dutch RDW
 
 # Toelichting
 
@@ -63,7 +63,7 @@ $ npm run build-ts
 copy+paste de bundle.js / bundle-ts.js in de html om het resultaat te testen
 ## JavaScript validatie oplossing
 
-Ik heb deze kentekenCheck gebaseerd op de actuele formats(kentekencombinaties) uitgegeven door de RDW(Rijksdienst voor het Wegverkeer) welke zijn te vinden via bijgevoegde link. De open data API vd RDW 
+Deze kentekenCheck is gebaseerd op de actuele formats(kentekencombinaties) welke zijn uitgegeven door de RDW(Rijksdienst voor het Wegverkeer) welke zijn te vinden via bijgevoegde link. De open data API vd RDW 
 retourneert geen koppeltekens in het kenteken voor zover bekend, dus vandaar deze oplossing.
 De array van regex patronen correspondeert met de lijst van formats op de site vd RDW in bijgaande link.
 De functie 'kentekenCheck' controleert of het ingevoerde kenteken correspondeert met het eerste valide patroon en retourneert vervolgens true en formatteert het kenteken. Indien false retourneert 'XX-XX-XX', er worden in de latere series geen klinkers gebruikt en geen karakters die de RDW voorschrijft. Kentekens met AA(Koningshuis) en CD(Corps Diplomatique) zijn in deze functie niet meegenomen, de letters C en Q mogen niet meer vd overheid ivm interpretatie problemen en zijn wel meegenomen.
@@ -92,7 +92,7 @@ Jest is onderdeel van de repository, `kenteken-check-nl-class.spec.js` bevat de 
 
 # English
 
-Dutch(NL) licencecheck based on the official formats released by RDW (Rijksdienst voor het Wegverkeer) found behind the link added.
+Dutch(NL) licencecheck based on the official formats which are released by the RDW (Rijksdienst voor het Wegverkeer) found behind the link added.
 Two solutions are provided:
 
 1. JavaScript/TypeScript(class or iife, with same functionality)
