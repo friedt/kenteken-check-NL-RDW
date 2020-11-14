@@ -63,7 +63,7 @@ $ npm run build-ts
 copy+paste de bundle.js / bundle-ts.js in de html om het resultaat te testen
 ## JavaScript validatie oplossing
 
-Deze kentekenCheck is gebaseerd op de actuele formats(kentekencombinaties) welke zijn uitgegeven door de RDW(Rijksdienst voor het Wegverkeer) welke zijn te vinden via bijgevoegde link. De open data API vd RDW 
+Deze kentekenCheck is gebaseerd op de actuele formats(kentekencombinaties) welke zijn uitgegeven door de RDW(Rijksdienst voor het Wegverkeer) en welke zijn te vinden via bijgevoegde link. De open data API vd RDW 
 retourneert geen koppeltekens in het kenteken voor zover bekend, dus vandaar deze oplossing.
 De array van regex patronen correspondeert met de lijst van formats op de site vd RDW in bijgaande link.
 De functie 'kentekenCheck' controleert of het ingevoerde kenteken correspondeert met het eerste valide patroon en retourneert vervolgens true en formatteert het kenteken. Indien false retourneert 'XX-XX-XX', er worden in de latere series geen klinkers gebruikt en geen karakters die de RDW voorschrijft. Kentekens met AA(Koningshuis) en CD(Corps Diplomatique) zijn in deze functie niet meegenomen, de letters C en Q mogen niet meer vd overheid ivm interpretatie problemen en zijn wel meegenomen.
