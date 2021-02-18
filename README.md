@@ -1,5 +1,6 @@
 # dead simple valid kenteken-check-NL / licenseplate nl / licenseplate dutch
 NL Kenteken-check formats 2020 RDW written in JavaScript, TypeScript or HTML5
+update: series 13 + 14 added
 
 # Information
 
