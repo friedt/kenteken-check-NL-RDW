@@ -2,7 +2,7 @@
 NL Kenteken-check formats 2020 RDW written in JavaScript, TypeScript or HTML5
 
 ### update 2021: 
-series 13 + 14 added
+series 13 + 14 added, serie 12 is not yet released by RDW
 
 # Information
 
