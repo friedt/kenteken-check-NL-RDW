@@ -37,7 +37,7 @@ import {KentekenCheck} from 'rdw-kenteken-check/src/kenteken-check-nl-class'
 ## Example
 
 Start lokaal een webserver en open index.html in een browser
-Moderne browsers ondersteunen es6 modules (import, export) out of the box, dus voor legacy browsers moet je babel/webpack gebruiken. 
+Moderne browsers ondersteunen es6 modules (import, export) out of the box.
 
 ```shell
 import {KentekenCheck} from './kenteken-check-nl-class.js';
