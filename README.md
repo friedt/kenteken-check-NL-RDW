@@ -111,6 +111,4 @@ Forbidden as from latest serie 11: PVV, SGP and VVD
 
 Some basic css
 
-# Performance
-Babel is used to convert to es5
-https://jsperf.com/class-vs-iife/6
+
