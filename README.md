@@ -1,8 +1,8 @@
 # dead simple valid kenteken-check-NL / licenseplate nl / licenseplate dutch
 NL Kenteken-check formats 2020 RDW written in JavaScript, TypeScript or HTML5
 
-# update 2021: 
-series 13 + 14 added
+### update 2021: 
+series 13 + 14 added, serie 12 is not yet released by RDW
 
 # Information
 
@@ -37,7 +37,7 @@ import {KentekenCheck} from 'rdw-kenteken-check/src/kenteken-check-nl-class'
 ## Example
 
 Start lokaal een webserver en open index.html in een browser
-Moderne browsers ondersteunen es6 modules (import, export) out of the box, dus voor legacy browsers moet je babel/webpack gebruiken. 
+Moderne browsers ondersteunen es6 modules (import, export) out of the box.
 
 ```shell
 import {KentekenCheck} from './kenteken-check-nl-class.js';
@@ -111,6 +111,4 @@ Forbidden as from latest serie 11: PVV, SGP and VVD
 
 Some basic css
 
-# Performance
-Babel is used to convert to es5
-https://jsperf.com/class-vs-iife/6
+
