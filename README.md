@@ -63,7 +63,7 @@ Om een build bundle te creëeren via Webpack zijn er twee mogelijkheden:
 $ npm run build
 $ npm run build-ts
 ```
-copy+paste de bundle.js / bundle-ts.js in de html om het resultaat te testen
+Open index.html in de 'dist' folder in een browser
 ## JavaScript validatie oplossing
 
 Deze kentekenCheck is gebaseerd op de actuele formats(kentekencombinaties) welke zijn uitgegeven door de RDW(Rijksdienst voor het Wegverkeer) en welke zijn te vinden via bijgevoegde link. De open data API vd RDW 

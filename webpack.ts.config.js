@@ -1,3 +1,5 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 const path = require('path');
 
 module.exports = {
@@ -19,4 +21,15 @@ module.exports = {
         filename: 'bundle-ts.js',
         path: path.resolve(__dirname, 'dist'),
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+        title: 'RDW kentekencheck',
+        template:  'src/index.html'
+    }),
+        new CopyPlugin({
+            patterns: [
+                { from: "src/example.css", to: "example.css" },
+                { from: "src/Kenteken.ttf", to: "Kenteken.ttf" }
+            ]
+        }),],
 };

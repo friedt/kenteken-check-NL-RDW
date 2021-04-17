@@ -5,7 +5,8 @@
   "main": "src/kenteken-check-nl-class.js",
   "scripts": {
     "test": "jest --verbose --coverage",
-    "eslint": "eslint src/*.js ",
+    "eslint": "eslint src/*.js",
+    "tslint": "eslint src/*.ts",
     "build": "webpack --config webpack.config.js",
     "build-ts": "webpack --config webpack.ts.config.js"
   },
@@ -23,13 +24,17 @@
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "copy-webpack-plugin": "^8.1.1",
     "eslint": "^6.8.0",
     "eslint-plugin-jest": "^23.8.2",
+    "html-webpack-plugin": "^5.3.1",
     "jest": "^25.3.0",
     "jest-cli": "^25.3.0",
     "ts-loader": "^7.0.5",
     "typescript": "^3.9.5",
-    "webpack": "^4.43.0",
+    "webpack": "^5.33.2",
     "webpack-cli": "^3.3.12"
   }
 }

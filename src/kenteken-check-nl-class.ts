@@ -40,9 +40,7 @@ export class KentekenCheck {
         this.forbiddenCharacters = /^((?!GVD|KKK|KVT|LPF|NSB|PKK|PSV|TBS|SS|SD).){6}$/;
     }
 
-    formatLicense() {
-        if (typeof this.kenteken !== 'string') return;
-
+    formatLicense(): string {
         const str = this.kenteken.toUpperCase()
             .trim()
             .split('-')
@@ -50,7 +48,7 @@ export class KentekenCheck {
         return this.showLicense(str);
     }
 
-    matchLicense(str: string) {
+    matchLicense(str: string): boolean {
         return this.arrRegEx.some((regEx, i) => {
 
             const re = new RegExp(regEx);
@@ -65,7 +63,7 @@ export class KentekenCheck {
         });
     }
 
-    showLicense(str: string) {
+    showLicense(str: string): string {
 
         // based on rdw demands
         // returns true immediately when found match : legacy browser proof IE 9/10/11, no polyfill needed
@@ -90,13 +88,13 @@ export class KentekenCheck {
         return 'XX-XX-XX';
     }
 
-    showInContainer(str: string) {
+    showInContainer(str: string): void {
         if (this.output && this.outputElm !== undefined) {
             this.outputElm.innerHTML = str;
         }
     }
 
-    getValue(e: Event) {
+    getValue(e: Event): void {
         if ((e.target as HTMLInputElement).value.length >= 6) {
             this.kenteken = (e.target as HTMLInputElement).value;
             this.formatLicense();
@@ -104,7 +102,7 @@ export class KentekenCheck {
 
     }
 
-    bindInputListener(event = 'input') {
+    bindInputListener(event = 'input'): void {
         if (this.inputElm !== undefined) {
             this.inputElm.addEventListener(event, this.getValue.bind(this));
         }
