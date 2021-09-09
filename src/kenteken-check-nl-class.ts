@@ -32,12 +32,12 @@ export class KentekenCheck {
             '^([0-9]{1})([BDFGHJKLMNPRSTVWXYZ]{3})([0-9]{2})$',// 9XXX99
             '^([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{3})([BDFGHJKLMNPRSTVWXYZ]{1})$',// XX999X
             '^([BDFGHJKLMNPRSTVWXYZ]{1})([0-9]{3})([BDFGHJKLMNPRSTVWXYZ]{2})$',// X999XX
-            '^((?!PVV|VVD|SGP)[BDFGHJKMNPRSVWXYZ]{3})([0-9]{2})([BDFGHJKMNPRSVWXYZ]{1})$',// XXX99X 11
+            '^([BDFGHJKMNPRSVWXYZ]{3})([0-9]{2})([BDFGHJKMNPRSVWXYZ]{1})$',// XXX99X 11
             '^([0-9]{1})([BDFGHJKMNPRSVWXYZ]{2})([0-9]{3})$',//9XX999 13
             '^([0-9]{3})([BDFGHJKMNPRSVWXYZ]{2})([0-9]{1})$'//999XX9 14
             ];
 
-        this.forbiddenCharacters = /^((?!GVD|KKK|KVT|LPF|NSB|PKK|PSV|TBS|SS|SD).){6}$/;
+        this.forbiddenCharacters = /^((?!GVD|KKK|KVT|LPF|NSB|PKK|PSV|TBS|SS|SD|PVV|SGP|VVD).){8}$/;
     }
 
     formatLicense(): string {
@@ -52,15 +52,19 @@ export class KentekenCheck {
         return this.arrRegEx.some((regEx, i) => {
 
             const re = new RegExp(regEx);
-            const res = re.test(str);
-            const resLegal = this.forbiddenCharacters.test(str);
+            const result = re.test(str);
+
 
             // match on regex pattern
-            if (res === true && resLegal === true) {
+            if (result) {
                 this.index = i;
                 return true;
             }
         });
+    }
+
+    checkForbiddenCharacters(str: string): boolean {
+        return this.forbiddenCharacters.test(str);
     }
 
     showLicense(str: string): string {
@@ -77,8 +81,11 @@ export class KentekenCheck {
                 this.inputElm.classList.add(this.classValid);
             }
             this.newStr = str.replace(re, '$1-$2-$3');
-            this.showInContainer(this.newStr);
-            return this.newStr;
+            const notForbidden = this.checkForbiddenCharacters(this.newStr)
+            if (notForbidden) {
+                this.showInContainer(this.newStr);
+                return this.newStr;
+            }
         }
         if (this.inputElm !== undefined) {
             this.inputElm.classList.remove(this.classValid);

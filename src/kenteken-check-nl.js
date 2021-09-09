@@ -21,12 +21,12 @@ const kentekenCheck = ((elm) => {
         '^([0-9]{1})([BDFGHJKLMNPRSTVWXYZ]{3})([0-9]{2})$',// 9XXX99
         '^([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{3})([BDFGHJKLMNPRSTVWXYZ]{1})$',// XX999X
         '^([BDFGHJKLMNPRSTVWXYZ]{1})([0-9]{3})([BDFGHJKLMNPRSTVWXYZ]{2})$',// X999XX
-        '^((?!PVV|VVD|SGP)[BDFGHJKMNPRSVWXYZ]{3})([0-9]{2})([BDFGHJKMNPRSVWXYZ]{1})$',// XXX99X 11
+        '^([BDFGHJKMNPRSVWXYZ]{3})([0-9]{2})([BDFGHJKMNPRSVWXYZ]{1})$',// XXX99X 11
         '^([0-9]{1})([BDFGHJKMNPRSVWXYZ]{2})([0-9]{3})$',//9XX999 13
         '^([0-9]{3})([BDFGHJKMNPRSVWXYZ]{2})([0-9]{1})$'//999XX9 14
     ];
 
-    const forbiddenCharacters = /^((?!GVD|KKK|KVT|LPF|NSB|PKK|PSV|TBS|SS|SD).){6}$/;
+    const forbiddenCharacters = /^((?!GVD|KKK|KVT|LPF|NSB|PKK|PSV|TBS|SS|SD|PVV|SGP|VVD).){8}$/;
 
     // based on rdw demands
     // returns true immediately when found match : legacy browser proof IE 9/10/11, no polyfill needed
@@ -34,16 +34,20 @@ const kentekenCheck = ((elm) => {
         return arrRegEx.some((regEx, i) => {
 
             const re = new RegExp(regEx);
-            const res = re.test(str);
-            const resLegal = forbiddenCharacters.test(str);
+            const result = re.test(str);
+
 
             // match on regex pattern
-            if (res === true && resLegal === true) {
+            if (result) {
                 index = i;
                 return true;
             }
         });
     };
+
+    const checkForbiddenCharacters = (str) => {
+        return forbiddenCharacters.test(str);
+    }
 
 
     const showLicense = (str) => {
@@ -57,7 +61,10 @@ const kentekenCheck = ((elm) => {
             elm.classList.add(classValid);
 
             newStr = str.replace(re, '$1-$2-$3');
-            return newStr; //kenteken
+            const notForbidden = checkForbiddenCharacters(newStr)
+            if (notForbidden) {
+                return newStr;
+            }
         }
 
         elm.classList.remove(classValid);

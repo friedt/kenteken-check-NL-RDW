@@ -46,7 +46,7 @@ describe('kenteken-check-class.js', function () {
 
     it('method "formatLicense" should return valid string', function () {
         // order of arr is important while corresponding index arrRegEx array
-       const arr = ['AB5643', '8765AG', '56TE54', 'GF88YY', 'HFFF43', '12HHGG', '12PTT8', '1KHH39', 'HG123R', 'G123TT', 'SGJ12P','8DP786', '765PK9'];
+       const arr = ['AB5643', '8765AG', '56TE54', 'GF88YY', 'HSDF43', '12HHGG', '12PTT8', '1KHH39', 'VV123D', 'G123TT', 'SGJ12P','8DP786', '765PK9'];
         arr.forEach((item, index) => {
             const kt2 = new KentekenCheck(item, inputElm);
 
@@ -99,8 +99,8 @@ describe('kenteken-check-class.js', function () {
 
     });
 
-    it('method "formatLicense" should return a invalid sign XX-XX-XX', function () {
-       const arr = ['VVD56T', 'SGP56T', '12359T', 'SD6677', 'GHFRP5', 'U123TT', 'PVV23R', '65F9F9', 'SS9988', '8ST765', '765LP9'];
+    it('method "formatLicense" should return a INVALID sign XX-XX-XX', function () {
+       const arr = [ 'HJJ01L', 'VVD56R', 'VSP56T', 'SGP56T', '12359T', 'SS6677', 'GHFRP5', 'U123TT', 'PVV23R', '65F9F9', 'SS9988', '8ST765', '765LP9', 'TBS43P', 'PYYY0P', 'UKJJ99'];
         arr.forEach(item => {
             const kt2 = new KentekenCheck(item, inputElm);
 
@@ -112,7 +112,7 @@ describe('kenteken-check-class.js', function () {
             kt2.bindInputListener();
             kt2.getValue(e);
             const valid = kt2.valid;
-
+            console.log(valid, kt2.formatLicense())
 
             expect(kt2.formatLicense()).toEqual('XX-XX-XX');
             expect(valid).toEqual(false);
