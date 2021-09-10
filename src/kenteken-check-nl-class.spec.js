@@ -1,13 +1,10 @@
 import {KentekenCheck} from './kenteken-check-nl-class';
 
-
 describe('kenteken-check-class.js', function () {
 
     let arrRegEx;
     let inputElm;
     let outputElm;
-
-
 
     beforeAll( function(){
 
@@ -70,8 +67,6 @@ describe('kenteken-check-class.js', function () {
 
     it('method "formatLicense" should return undefined when not string', function () {
         const kt2 = new KentekenCheck(987, inputElm);
-
-
         //jest.spyOn(kt2, 'license', 'get').mockReturnValue('GFYY54');
         expect(kt2.formatLicense()).toBeUndefined();
 
@@ -100,7 +95,7 @@ describe('kenteken-check-class.js', function () {
     });
 
     it('method "formatLicense" should return a INVALID sign XX-XX-XX', function () {
-       const arr = [ 'HJJ01L', 'VVD56R', 'VSP56T', 'SGP56T', '12359T', 'SS6677', 'GHFRP5', 'U123TT', 'PVV23R', '65F9F9', 'SS9988', '8ST765', '765LP9', 'TBS43P', 'PYYY0P', 'UKJJ99'];
+       const arr = [ 'HJJ01L', 'VVD56R', 'VSP56T', 'SGP56T', '12359T', 'SD6677', 'P09988', 'GHFRP5', 'U123TT', 'PVV23R', '65F9F9', 'SS9988', '8ST765', '765LP9', 'TBS43P', 'PYYY0P', 'UKJJ99', 'KVT56R', 'KKK56R', 'LPF56R', 'NSB56R', 'PKK56R', 'PSV56R', 'PSS56R'];
         arr.forEach(item => {
             const kt2 = new KentekenCheck(item, inputElm);
 
@@ -112,8 +107,6 @@ describe('kenteken-check-class.js', function () {
             kt2.bindInputListener();
             kt2.getValue(e);
             const valid = kt2.valid;
-            console.log(valid, kt2.formatLicense())
-
             expect(kt2.formatLicense()).toEqual('XX-XX-XX');
             expect(valid).toEqual(false);
         });
