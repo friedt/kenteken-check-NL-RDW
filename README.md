@@ -56,7 +56,7 @@ outputElm.innerHTML = kt2.formatLicense();
 ```
 
 ## Webpack server
-start de webserver in js of ts mode
+start de webserver in js of ts mode, ga naar http://localhost:8080/
 ```shell
 
 $ npm start
