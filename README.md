@@ -15,9 +15,7 @@ Licenseplate-check / kenteken-check based on valid formats which were released b
 
 ```shell
 $ npm install
-$ npm test
-$ npm run eslint
-$ tsc 
+
 ```
 
 ## Import as npm module in your project
@@ -54,7 +52,19 @@ kt.bindInputListener();
 // format only
 const kt2 = new KentekenCheck('JFK01P')
 outputElm.innerHTML = kt2.formatLicense();
+
 ```
+
+## Webpack server
+start de webserver in js of ts mode
+```shell
+
+$ npm start
+$ npm run start-ts
+
+```
+
+ 
 ## Webpack builds
 Om een build bundle te creëeren via Webpack zijn er twee mogelijkheden:
 - build typescript
@@ -93,6 +103,20 @@ Het is ook mogelijk om HTML5 validatie middels het 'pattern' attribuut toe te pa
 kenteken-check-nl-class.js is 100% gecovered door unit testing met gebruik van Jest or Jasmine. 
 `kenteken-check-nl-class.spec.js` runt in beide frameworks zonder aanpassingen.
 Jest is onderdeel van de repository, `kenteken-check-nl-class.spec.js` bevat de specs.
+
+```shell
+$ npm test
+```
+
+## Linters
+
+om compile errors te triggeren in TypeScript files is het 'tsc' commando nauwkeuriger
+
+```shell
+$ npm run eslint
+$ npm run tslint
+$ tsc
+```
 
 # English
 
