@@ -1,5 +1,5 @@
 # dead simple valid kenteken-check-NL / licenseplate nl / licenseplate dutch
-NL Kenteken-check formats 2020 RDW written in JavaScript, TypeScript or HTML5
+NL Kenteken-check formats 2020 RDW written in JavaScript, TypeScript or HTML5. Since it is a es6 module, it can be easily integrated in a js framework, like Vue, React or Angular.
 
 ### update 2021: 
 series 13 + 14 added, serie 12 is not yet released by RDW. 
@@ -56,7 +56,7 @@ outputElm.innerHTML = kt2.formatLicense();
 ```
 
 ## Webpack server
-start de webserver in js of ts mode
+start de webserver in js of ts mode, ga naar http://localhost:8080/
 ```shell
 
 $ npm start
