@@ -7,7 +7,7 @@ Character L and T not allowed from serie 11
 
 # Information
 
-Licenseplate-check / kenteken-check based on valid formats which were released by dutch RDW. The voertuigcategorie "personen auto's" has only be taken into account, so 'bestelwagens' and other categories are not yet taken into account
+Licenseplate-check / kenteken-check based on valid formats which have been released by the dutch RDW. The voertuigcategorie "personen auto's" has only be taken into account, so 'bestelwagens' and other categories are not yet taken into account
 
 # Toelichting
 
