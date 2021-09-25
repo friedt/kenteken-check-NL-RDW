@@ -1,5 +1,3 @@
-
-// start class KentekenCheck
 export class KentekenCheck {
 
     newStr: string;
