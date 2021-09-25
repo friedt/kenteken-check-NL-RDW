@@ -1,4 +1,3 @@
-
 export class KentekenCheck {
 
     constructor(kenteken = '', inputElm = null, outputElm = null, output = false, classValid = 'valid') {
