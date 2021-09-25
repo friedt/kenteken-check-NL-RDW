@@ -1,5 +1,3 @@
-
-
 const el = document.getElementById('kenteken');
 const inputElm = document.getElementById('input-kenteken');
 
