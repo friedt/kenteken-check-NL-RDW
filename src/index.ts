@@ -1,8 +1,4 @@
 import {KentekenCheck} from './kenteken-check-nl-class';
-//import Vue from 'vue';
-
-//console.log(KentekenCheck);
-//console.log(Vue);
 
 const outputElm = document.getElementById('kenteken') as HTMLDivElement;
 const inputElm = document.getElementById('input-kenteken') as HTMLInputElement;
