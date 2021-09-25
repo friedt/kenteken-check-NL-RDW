@@ -20,7 +20,7 @@ $ npm install
 
 ## Import as npm module in your project
 
-Om browser import issues te voorkomen van npm modules is het aanbevolen om een module bundler zoals Webpack te gebruiken.
+ES6 modules(import/export) worden door moderne browsers ondersteund, om issues te voorkomen van npm modules is het aanbevolen om een module bundler zoals Webpack te gebruiken.
 
 ```shell
 
