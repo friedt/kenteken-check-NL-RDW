@@ -20,7 +20,7 @@ $ npm install
 
 ## Import as npm module in your project
 
-ES6 modules(import/export) worden door moderne browsers ondersteund, om legacy browser issues te voorkomen van es6 modules is het aanbevolen om een module bundler zoals Webpack te gebruiken.
+ES6 modules(import/export) worden door moderne browsers ondersteund, om legacy browser issues te voorkomen is het aanbevolen om een module bundler zoals Webpack te gebruiken.
 
 ```shell
 
