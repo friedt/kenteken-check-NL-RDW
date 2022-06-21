@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import {KentekenCheck} from './kenteken-check-nl-class';
 
 describe('kenteken-check-class.js', function () {
