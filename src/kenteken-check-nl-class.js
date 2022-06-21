@@ -49,6 +49,7 @@ export class KentekenCheck {
                 this.index = i;
                 return true;
             }
+            return false
         });
     }
 
