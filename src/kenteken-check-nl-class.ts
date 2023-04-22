@@ -4,21 +4,21 @@ export class KentekenCheck {
     index: number;
     kenteken: string;
     valid: boolean;
-    inputElm: HTMLInputElement | undefined;
+    inputElm: HTMLInputElement | null;
     output: boolean;
-    outputElm: HTMLDivElement | undefined;
+    outputElm: HTMLDivElement | null;
     classValid: string;
     arrRegEx: Array<string>;
     forbiddenCharacters: RegExp;
 
-    constructor(kenteken: string, inputElm?: HTMLInputElement, outputElm?: HTMLDivElement, output = false, classValid = 'valid'){
+    constructor(kenteken: string, inputElm?: HTMLInputElement, outputElm?: HTMLDivElement, output = false, classValid = 'valid') {
         this.newStr = '';
         this.index = 0;
         this.output = output;
         this.kenteken = kenteken;
         this.valid = false;
-        this.inputElm = inputElm;
-        this.outputElm = outputElm;
+        this.inputElm = inputElm ?? null;
+        this.outputElm = outputElm ?? null;
         this.classValid = classValid;
         this.arrRegEx = ['^([A-Z]{2})([0-9]{2})([0-9]{2})$', // XX9999
             '^([0-9]{2})([0-9]{2})([A-Z]{2})$', // 9999XX
@@ -34,7 +34,7 @@ export class KentekenCheck {
             '^([BDFGHJKLMNPRSTVWXYZ]{1})([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{3})$',// X99XXX 12
             '^([0-9]{1})([BDFGHJKMNPRSVWXYZ]{2})([0-9]{3})$',//9XX999 13
             '^([0-9]{3})([BDFGHJKMNPRSVWXYZ]{2})([0-9]{1})$'//999XX9 14
-            ];
+        ];
 
         this.forbiddenCharacters = /^((?!GVD|KKK|KVT|LPF|NSB|PKK|PSV|TBS|SS|SD|PVV|SGP|VVD).){8}$/;
     }
@@ -77,7 +77,7 @@ export class KentekenCheck {
         if (matchLicense) {
             this.valid = matchLicense;
             const re = new RegExp(this.arrRegEx[this.index]);
-            if (this.inputElm !== undefined) {
+            if (this.inputElm) {
                 this.inputElm.value = str.replace(re, '$1-$2-$3');
                 this.inputElm.classList.add(this.classValid);
             }
@@ -88,16 +88,16 @@ export class KentekenCheck {
                 return this.newStr;
             }
         }
-        if (this.inputElm !== undefined) {
-            this.inputElm.classList.remove(this.classValid);
-        }
+
+        this.inputElm?.classList.remove(this.classValid);
+
         this.valid = false;
         this.showInContainer('XX-XX-XX')
         return 'XX-XX-XX';
     }
 
     showInContainer(str: string): void {
-        if (this.output && this.outputElm !== undefined) {
+        if (this.output && this.outputElm) {
             this.outputElm.innerHTML = str;
         }
     }
@@ -111,9 +111,7 @@ export class KentekenCheck {
     }
 
     bindInputListener(event = 'input'): void {
-        if (this.inputElm !== undefined) {
-            this.inputElm.addEventListener(event, this.getValue.bind(this));
-        }
+        this.inputElm?.addEventListener(event, this.getValue.bind(this));
     }
 
 }
