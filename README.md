@@ -1,5 +1,5 @@
 # dead simple valid kenteken-check-NL / licenseplate nl / licenseplate dutch
-NL Kenteken-check formats 2023 RDW written in JavaScript, TypeScript or HTML5. Since it is a es6 module, it can also be easily integrated in any js framework, like Vue, React or Angular.
+NL Kenteken-check formats up to date 2023 RDW written in JavaScript, TypeScript or HTML5. Since it is a es6 module, it can also be easily integrated in any js framework, like Vue, React or Angular. Since it is a es6 module it is compatible with Vite.
 
 ### update 2023:
 series 12(released by RDW), added X-99-XXX
