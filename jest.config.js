@@ -1,6 +1,9 @@
 // jest.config.js
 module.exports = {
     verbose: true,
+    testMatch:[ "**/?(*.)+(spec).[jt]s"]
+       
+    ,
     "collectCoverage": true,
     "collectCoverageFrom": [
         "src/kenteken-check-nl-class.js",
