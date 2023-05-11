@@ -103,9 +103,8 @@ Het is ook mogelijk om HTML5 validatie middels het 'pattern' attribuut toe te pa
 
 ## Unit test in Jest/Jasmine
 
-kenteken-check-nl-class.js is 100% gecovered door unit testing met gebruik van Jest or Jasmine. 
-`kenteken-check-nl-class.spec.js` runt in beide frameworks zonder aanpassingen.
-Jest is onderdeel van de repository, `kenteken-check-nl-class.spec.js` bevat de specs.
+kenteken-check-nl-class.js en kenteken-check-nl-class-ts.ts zijn 100% gecovered door unit testing met gebruik van Jest or Jasmine. 
+
 
 ```shell
 $ npm test
