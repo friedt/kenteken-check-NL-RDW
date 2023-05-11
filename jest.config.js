@@ -1,13 +1,14 @@
 // jest.config.js
 module.exports = {
     verbose: true,
+    testEnvironment: "jsdom",
     transform: {
         '^.+\\.js?$': 'babel-jest',
-        "^.+\\.tsx?$": "ts-jest"
+        "^.+\\.ts?$": "ts-jest"
     },
     "collectCoverage": true,
     "collectCoverageFrom": [
-        "src/kenteken-check-nl-class.js",
+        "src/kenteken-check-nl-class*.{js,ts}",
         "!**/node_modules/**",
 
     ],

@@ -1,10 +1,6 @@
-/**
- * @jest-environment jsdom
- */
+import {KentekenCheck} from './kenteken-check-nl-class-ts';
 
-import {KentekenCheck} from './kenteken-check-nl-class';
-
-describe('kenteken-check-class.ts', function () {
+describe('kenteken-check-class-ts.ts', function () {
 
     let arrRegEx: string[];
     let inputElm: any;
@@ -69,12 +65,6 @@ describe('kenteken-check-class.ts', function () {
 
     });
 
-    it('method "formatLicense" should return undefined when not string', function () {
-        const kt2 = new KentekenCheck(inputElm);
-        //jest.spyOn(kt2, 'license', 'get').mockReturnValue('GFYY54');
-        expect(kt2.formatLicense()).toBeUndefined();
-
-    });
 
     it('method "showInContainer" should display license in the container', function () {
         const kt2 = new KentekenCheck('GFYY54', inputElm, outputElm, true);

@@ -110,6 +110,7 @@ export class KentekenCheck {
 
     }
 
+
     bindInputListener(event = 'input'): void {
         this.inputElm?.addEventListener(event, this.getValue.bind(this));
     }

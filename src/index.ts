@@ -1,4 +1,4 @@
-import {KentekenCheck} from './kenteken-check-nl-class';
+import {KentekenCheck} from './kenteken-check-nl-class-ts';
 
 const outputElm = document.getElementById('kenteken') as HTMLDivElement;
 const inputElm = document.getElementById('input-kenteken') as HTMLInputElement;
