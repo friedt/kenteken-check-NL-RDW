@@ -1,5 +1,5 @@
 # kenteken-check-NL / licenseplate nl / licenseplate dutch
-Kenteken-check-NL-RDW formateert en valideert kentekens volgens de officiele serie kenekencombinaties uitgegeven door de RDW vanaf 1951.
+Kenteken-check-NL-RDW formateert en valideert kentekens volgens de officiele serie kentekencombinaties uitgegeven door de RDW vanaf 1951.
 Kenteken-check-NL-RDW formats up to date 2023 RDW written in JavaScript, TypeScript or HTML5. Since it is a es6 module, it can also be easily integrated in any js framework, like Vue, React or Angular and Vite.
 
 ### update 2023:
