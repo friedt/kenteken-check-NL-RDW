@@ -1,6 +1,6 @@
 export class KentekenCheck {
 
-    constructor(kenteken = '', inputElm = null, outputElm = null, output = false, classValid = 'valid') {
+    constructor(kenteken = '', inputElm = null, outputElm = null, output = false, classValid = 'valid', message = 'XX-XX-XX') {
         this.newStr = '';
         this.output = output;
         this.kenteken = kenteken;
@@ -9,6 +9,7 @@ export class KentekenCheck {
         this.inputElm = inputElm;
         this.outputElm = outputElm;
         this.classValid = classValid;
+        this.errorMessage = message;
         this.arrRegEx = ['^([A-Z]{2})([0-9]{2})([0-9]{2})$', // XX9999
             '^([0-9]{2})([0-9]{2})([A-Z]{2})$', // 9999XX
             '^([0-9]{2})([A-Z]{2})([0-9]{2})$', // 99XX99
@@ -84,14 +85,15 @@ export class KentekenCheck {
             this.inputElm.classList.remove(this.classValid);
         }
         this.valid = false;
-        this.showInContainer('XX-XX-XX')
-        return 'XX-XX-XX';
+        return this.showInContainer(this.errorMessage);
+
     }
 
     showInContainer(str) {
         if (this.output && this.outputElm !== null) {
             this.outputElm.innerHTML = str;
         }
+        return str;
     }
 
     getValue(e) {

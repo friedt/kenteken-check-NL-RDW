@@ -10,8 +10,9 @@ export class KentekenCheck {
     classValid: string;
     arrRegEx: Array<string>;
     forbiddenCharacters: RegExp;
+    errorMessage: string;
 
-    constructor(kenteken: string, inputElm?: HTMLInputElement, outputElm?: HTMLDivElement, output = false, classValid = 'valid') {
+    constructor(kenteken: string, inputElm?: HTMLInputElement, outputElm?: HTMLDivElement, output = false, classValid = 'valid', errorMessage = 'XX-XX-XX') {
         this.newStr = '';
         this.index = 0;
         this.output = output;
@@ -20,6 +21,7 @@ export class KentekenCheck {
         this.inputElm = inputElm ?? null;
         this.outputElm = outputElm ?? null;
         this.classValid = classValid;
+        this.errorMessage = errorMessage;
         this.arrRegEx = ['^([A-Z]{2})([0-9]{2})([0-9]{2})$', // XX9999
             '^([0-9]{2})([0-9]{2})([A-Z]{2})$', // 9999XX
             '^([0-9]{2})([A-Z]{2})([0-9]{2})$', // 99XX99
@@ -92,15 +94,18 @@ export class KentekenCheck {
         this.inputElm?.classList.remove(this.classValid);
 
         this.valid = false;
-        this.showInContainer('XX-XX-XX')
-        return 'XX-XX-XX';
+        console.log(this.valid)
+        return this.showInContainer(this.errorMessage);
+
     }
 
-    showInContainer(str: string): void {
+    showInContainer(str: string): string {
         if (this.output && this.outputElm) {
             this.outputElm.innerHTML = str;
         }
+        return str;
     }
+
 
     getValue(e: Event): void {
         if ((e.target as HTMLInputElement).value.length >= 6) {
