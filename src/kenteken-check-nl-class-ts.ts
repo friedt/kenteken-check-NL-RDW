@@ -94,7 +94,6 @@ export class KentekenCheck {
         this.inputElm?.classList.remove(this.classValid);
 
         this.valid = false;
-        console.log(this.valid)
         return this.showInContainer(this.errorMessage);
 
     }
