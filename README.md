@@ -104,7 +104,7 @@ Het is ook mogelijk om HTML5 validatie middels het 'pattern' attribuut toe te pa
 
 ## Unit test in Jest/Jasmine
 
-kenteken-check-nl-class.js en kenteken-check-nl-class-ts.ts zijn 100% gecovered door unit testing met gebruik van Jest or Jasmine. 
+kenteken-check-nl-class.js en kenteken-check-nl-class-ts.ts zijn 100% gecovered door unit testing met gebruik van Jest of Jasmine. 
 
 
 ```shell
@@ -113,7 +113,7 @@ $ npm test
 
 ## Linters
 
-om compile errors te triggeren in TypeScript files is het 'npx tsc' commando nauwkeuriger
+om compile errors te triggeren in TypeScript files is het 'npx tsc' commando nauwkeuriger. Typescript is als devDependency geinstalleerd, dus draait niet in de global scope.
 
 ```shell
 $ npm run eslint
