@@ -1,6 +1,6 @@
 {
   "name": "rdw-kenteken-check",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "rdw kentekencheck",
   "main": "src/kenteken-check-nl-class.js",
   "scripts": {
@@ -27,7 +27,7 @@
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.18.2",
     "@types/jest": "^29.5.1",
-    "@types/node": "^20.1.1",
+    "@types/node": "^20.2.0",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
     "@webpack-cli/serve": "^2.0.2",

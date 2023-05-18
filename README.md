@@ -113,12 +113,12 @@ $ npm test
 
 ## Linters
 
-om compile errors te triggeren in TypeScript files is het 'tsc' commando nauwkeuriger
+om compile errors te triggeren in TypeScript files is het 'npx tsc' commando nauwkeuriger
 
 ```shell
 $ npm run eslint
 $ npm run tslint
-$ tsc
+$ npx tsc
 ```
 
 # English
