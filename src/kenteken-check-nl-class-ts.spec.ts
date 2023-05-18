@@ -1,17 +1,18 @@
+
 import {KentekenCheck} from './kenteken-check-nl-class-ts';
 
 describe('kenteken-check-class-ts.ts', function () {
 
     let arrRegEx: string[];
-    let inputElm: any;
-    let outputElm: any;
+    let inputElm: HTMLInputElement;
+    let outputElm: HTMLDivElement;
 
     beforeAll( function(){
 
         inputElm = document.createElement('input') as HTMLInputElement;
         outputElm = document.createElement('div') as HTMLDivElement;
-        document.body.insertAdjacentHTML('afterbegin', inputElm);
-        document.body.insertAdjacentHTML('afterbegin', outputElm);
+        document.body.insertAdjacentElement('afterbegin', inputElm);
+        document.body.insertAdjacentElement('afterbegin', outputElm);
 
         const kt = new KentekenCheck("");
         arrRegEx = kt.arrRegEx;
@@ -61,6 +62,8 @@ describe('kenteken-check-class-ts.ts', function () {
 
             expect(kt2.formatLicense()).toEqual(newStr);
             expect(valid).toEqual(true);
+
+
         });
 
     });
@@ -75,7 +78,8 @@ describe('kenteken-check-class-ts.ts', function () {
         } as any;
         kt2.bindInputListener();
         kt2.getValue(e);
-        expect(kt2.outputElm?.innerHTML).toEqual('GF-YY-54');
+        expect(outputElm.innerHTML).toEqual('GF-YY-54');
+
 
     });
 
@@ -85,12 +89,13 @@ describe('kenteken-check-class-ts.ts', function () {
         const classN = kt2.classValid;
         expect(classN).toEqual('valid');
 
+
     });
 
     it('method "formatLicense" should return a INVALID sign XX-XX-XX', function () {
        const arr = [ 'HJJ01L', 'VVD56R', 'VSP56T', 'SGP56T', '12359T', 'SD6677', 'P09988', 'GHFRP5', 'U123TT', 'PVV23R', '65F9F9', 'SS9988', '8ST765', '765LP9', 'TBS43P', 'PYYY0P', 'UKJJ99', 'KVT56R', 'KKK56R', 'LPF56R', 'NSB56R', 'PKK56R', 'PSV56R', 'PSS56R','S88KKK', 'P88SSD'];
         arr.forEach(item => {
-            const kt2 = new KentekenCheck(item, inputElm);
+            const kt2 = new KentekenCheck(item, inputElm, outputElm);
 
             const e = {
                 'target': {
@@ -102,8 +107,30 @@ describe('kenteken-check-class-ts.ts', function () {
             const valid = kt2.valid;
             expect(kt2.formatLicense()).toEqual('XX-XX-XX');
             expect(valid).toEqual(false);
+            expect(outputElm.innerHTML).toEqual('XX-XX-XX');
+
         });
 
 
+    })
+
+    it('"outputElm" should return a INVALID text "Geen geldig kenteken"', function () {
+        const arr = [ 'HJJ01L', 'VVD56R', 'VSP56T']
+        arr.forEach(item => {
+            const kt2 = new KentekenCheck(item, inputElm, outputElm, 'valid', 'Geen geldig kenteken');
+
+            const e = {
+                'target': {
+                    value : item
+                }
+            } as any;
+            kt2.bindInputListener();
+            kt2.getValue(e);
+            const valid = kt2.valid;
+
+            expect(valid).toEqual(false);
+            expect(outputElm.innerHTML).toEqual('Geen geldig kenteken');
+            //expect(outputElm).toMatchSnapshot()
+        });
     })
 });
