@@ -1,6 +1,6 @@
 {
   "name": "rdw-kenteken-check",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "rdw kentekencheck",
   "main": "src/kenteken-check-nl-class.js",
   "scripts": {
