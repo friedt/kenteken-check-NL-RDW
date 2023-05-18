@@ -14,8 +14,8 @@ describe('kenteken-check-class.js', function () {
 
         inputElm = document.createElement('input');
         outputElm = document.createElement('div');
-        document.body.insertAdjacentHTML('afterbegin', inputElm);
-        document.body.insertAdjacentHTML('afterbegin', outputElm);
+        document.body.insertAdjacentElement('afterbegin', inputElm);
+        document.body.insertAdjacentElement('afterbegin', outputElm);
 
         const kt = new KentekenCheck();
         arrRegEx = kt.arrRegEx;

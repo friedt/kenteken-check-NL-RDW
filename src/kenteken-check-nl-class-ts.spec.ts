@@ -5,12 +5,12 @@ describe('kenteken-check-class-ts.ts', function () {
 
     let arrRegEx: string[];
     let inputElm: HTMLInputElement;
-    let outputElm: HTMLDivElement;
+    let outputElm: HTMLElement;
 
     beforeAll( function(){
 
         inputElm = document.createElement('input') as HTMLInputElement;
-        outputElm = document.createElement('div') as HTMLDivElement;
+        outputElm = document.createElement('span') as HTMLElement;
         document.body.insertAdjacentElement('afterbegin', inputElm);
         document.body.insertAdjacentElement('afterbegin', outputElm);
 
