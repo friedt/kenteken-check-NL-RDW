@@ -34,7 +34,7 @@ import {KentekenCheck} from 'rdw-kenteken-check'
 ```
 ## Import typescript as npm module
 ```shell
-import {KentekenCheck} from 'rdw-kenteken-check/src/kenteken-check-nl-class'
+import {KentekenCheck} from 'rdw-kenteken-check/src/kenteken-check-nl-class-ts'
 ```
 
 ## Example
