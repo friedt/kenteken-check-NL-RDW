@@ -1,8 +1,7 @@
 export class KentekenCheck {
 
-    constructor(kenteken = '', inputElm = null, outputElm = null, output = false, classValid = 'valid', message = 'XX-XX-XX') {
+    constructor(kenteken = '', inputElm = null, outputElm = null, classValid = 'valid', message = 'XX-XX-XX') {
         this.newStr = '';
-        this.output = output;
         this.kenteken = kenteken;
         this.index = 0;
         this.valid = false;
@@ -90,7 +89,7 @@ export class KentekenCheck {
     }
 
     showInContainer(str) {
-        if (this.output && this.outputElm !== null) {
+        if (this.outputElm !== null) {
             this.outputElm.innerHTML = str;
         }
         return str;

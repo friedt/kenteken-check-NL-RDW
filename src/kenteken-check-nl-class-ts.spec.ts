@@ -67,7 +67,7 @@ describe('kenteken-check-class-ts.ts', function () {
 
 
     it('method "showInContainer" should display license in the container', function () {
-        const kt2 = new KentekenCheck('GFYY54', inputElm, outputElm, true);
+        const kt2 = new KentekenCheck('GFYY54', inputElm, outputElm);
         const e = {
             'target': {
                 value : 'GFYY54'
@@ -75,8 +75,7 @@ describe('kenteken-check-class-ts.ts', function () {
         } as any;
         kt2.bindInputListener();
         kt2.getValue(e);
-
-        expect(kt2.output).toEqual(true);
+        expect(kt2.outputElm?.innerHTML).toEqual('GF-YY-54');
 
     });
 

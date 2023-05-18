@@ -5,17 +5,15 @@ export class KentekenCheck {
     kenteken: string;
     valid: boolean;
     inputElm: HTMLInputElement | null;
-    output: boolean;
     outputElm: HTMLDivElement | null;
     classValid: string;
     arrRegEx: Array<string>;
     forbiddenCharacters: RegExp;
     errorMessage: string;
 
-    constructor(kenteken: string, inputElm?: HTMLInputElement, outputElm?: HTMLDivElement, output = false, classValid = 'valid', errorMessage = 'XX-XX-XX') {
+    constructor(kenteken: string, inputElm?: HTMLInputElement, outputElm?: HTMLDivElement, classValid = 'valid', errorMessage = 'XX-XX-XX') {
         this.newStr = '';
         this.index = 0;
-        this.output = output;
         this.kenteken = kenteken;
         this.valid = false;
         this.inputElm = inputElm ?? null;
@@ -99,7 +97,7 @@ export class KentekenCheck {
     }
 
     showInContainer(str: string): string {
-        if (this.output && this.outputElm) {
+        if (this.outputElm) {
             this.outputElm.innerHTML = str;
         }
         return str;
