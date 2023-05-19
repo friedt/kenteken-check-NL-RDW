@@ -20,7 +20,7 @@ const kentekenCheck = ((elm) => {
         '^([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{3})([BDFGHJKLMNPRSTVWXYZ]{1})$',// XX999X
         '^([BDFGHJKLMNPRSTVWXYZ]{1})([0-9]{3})([BDFGHJKLMNPRSTVWXYZ]{2})$',// X999XX
         '^([BDFGHJKMNPRSVWXYZ]{3})([0-9]{2})([BDFGHJKMNPRSVWXYZ]{1})$',// XXX99X 11
-        '^([BDFGHJKLMNPRSTVWXYZ]{1})([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{3})$',// X99XXX 12
+        '^([BDFGHJKMNPRSVWXYZ]{1})([0-9]{2})([BDFGHJKMNPRSVWXYZ]{3})$',// X99XXX 12
         '^([0-9]{1})([BDFGHJKMNPRSVWXYZ]{2})([0-9]{3})$',//9XX999 13
         '^([0-9]{3})([BDFGHJKMNPRSVWXYZ]{2})([0-9]{1})$'//999XX9 14
     ];
