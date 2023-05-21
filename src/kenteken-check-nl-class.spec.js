@@ -99,7 +99,7 @@ describe('kenteken-check-class.js', function () {
     });
 
     it('method "formatLicense" should return a INVALID sign XX-XX-XX', function () {
-        const arr = [ 'HJJ01L', 'VVD56R', 'VSP56T', 'SGP56T', '12359T', 'SD6677', 'P09988', 'GHFRP5', 'U123TT', 'PVV23R', '65F9F9', 'SS9988', '8ST765', '765LP9', 'TBS43P', 'PYYY0P', 'UKJJ99', 'KVT56R', 'KKK56R', 'LPF56R', 'NSB56R', 'PKK56R', 'PSV56R', 'PSS56R','S88KKK', 'P88SSD','1234YI', 'C69876', '654321', 'YT6765', '67C688', '87PO70', '4321OO', '5476P9', 'LYP66T', 'CP77PP'];
+        const arr = [ 'HJJ01I', 'VVD56R', 'VSP56O', 'SGP56T', '12359T', 'SD6677', 'P09988', 'GHFRP5', 'U123TT', 'PVV23R', '65F9F9', 'SS9988', '8SU765', '765IP9', 'TBS43P', 'PYYY0P', 'UKJJ99', 'KVT56R', 'KKK56R', 'LPF56R', 'NSB56R', 'PKK56R', 'PSV56R', 'PSS56R','S88KKK', 'P88SSD','1234YI', 'C69876', '654321', 'YT6765', '67C688', '87PO70', '4321OO', '5476P9', 'LYP66T', 'CP77PP'];
         arr.forEach(item => {
             const kt2 = new KentekenCheck(item, inputElm);
 

@@ -19,10 +19,10 @@ const kentekenCheck = ((elm) => {
         '^([0-9]{1})([BDFGHJKLMNPRSTVWXZ]{3})([0-9]{2})$',// 9XXX99 2009
         '^([BDFGHJKLMNPRSTVWXZ]{2})([0-9]{3})([BDFGHJKLMNPRSTVWXZ]{1})$',// XX999X 2006
         '^([BDFGHJKLMNPRSTVWXZ]{1})([0-9]{3})([BDFGHJKLMNPRSTVWXZ]{2})$',// X999XX 2008
-        '^([BDFGHJKMNPRSVWXZ]{3})([0-9]{2})([BDFGHJKMNPRSVWXZ]{1})$',// XXX99X 11 2015
-        '^([BDFGHJKMNPRSVWXZ]{1})([0-9]{2})([BDFGHJKMNPRSVWXZ]{3})$',// X99XXX 12 2021
-        '^([0-9]{1})([BDFGHJKMNPRSVWXZ]{2})([0-9]{3})$',//9XX999 13 2016
-        '^([0-9]{3})([BDFGHJKMNPRSVWXZ]{2})([0-9]{1})$'//999XX9 14 2019
+        '^([BDFGHJKLMNPRSTVWXZ]{3})([0-9]{2})([BDFGHJKLMNPRSTVWXZ]{1})$',// XXX99X 11 2015
+        '^([BDFGHJKMNPRSVWXZ]{1})([0-9]{2})([BDFGHJKLMNPRSTVWXZ]{3})$',// X99XXX 12 2021
+        '^([0-9]{1})([BDFGHJKLMNPRSTVWXZ]{2})([0-9]{3})$',//9XX999 13 2016
+        '^([0-9]{3})([BDFGHJKLMNPRSTVWXZ]{2})([0-9]{1})$'//999XX9 14 2019
     ];
 
     const forbiddenCharacters = /^((?!GVD|KKK|KVT|LPF|NSB|PKK|PSV|TBS|SS|SD|PVV|SGP|VVD).){8}$/;
