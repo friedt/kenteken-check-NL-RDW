@@ -56,7 +56,6 @@ export class KentekenCheck {
 
             // match on regex pattern
             if (result) {
-                console.log(re)
                 this.index = i;
                 return true;
             }
