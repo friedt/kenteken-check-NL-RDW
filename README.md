@@ -7,7 +7,7 @@ series 12(released by RDW), added X-99-XXX
 
 ### update 2021: 
 series 13 + 14 added, serie 12 is not yet released by RDW. 
-Character L and T not allowed from serie 11
+
 
 # Information
 
