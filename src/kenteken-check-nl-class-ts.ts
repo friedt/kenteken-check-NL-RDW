@@ -20,20 +20,20 @@ export class KentekenCheck {
         this.outputElm = outputElm ?? null;
         this.classValid = classValid;
         this.errorMessage = errorMessage;
-        this.arrRegEx = ['^([A-Z]{2})([0-9]{2})([0-9]{2})$', // XX9999
-            '^([0-9]{2})([0-9]{2})([A-Z]{2})$', // 9999XX
-            '^([0-9]{2})([A-Z]{2})([0-9]{2})$', // 99XX99
+        this.arrRegEx = ['^([A-Z]|[^0-9CIOY]{2})([0-9]{2})([0-9]{2})$', // XX9999
+            '^([0-9]{2})([0-9]{2})([A-Z]|[^0-9CIOY]{2})$', // 9999XX
+            '^([0-9]{2})([A-Z]|[^0-9CIOY]{2})([0-9]{2})$', // 99XX99
             '^([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{2})$',// XX99XX
-            '^([BDFGHJKLMNPRSTVWXYZ]{2})([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})$',// XXXX99
-            '^([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{2})([BDFGHJKLMNPRSTVWXYZ]{2})$',// 99XXXX
-            '^([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{3})([0-9]{1})$',// 99XXX9
-            '^([0-9]{1})([BDFGHJKLMNPRSTVWXYZ]{3})([0-9]{2})$',// 9XXX99
-            '^([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{3})([BDFGHJKLMNPRSTVWXYZ]{1})$',// XX999X
-            '^([BDFGHJKLMNPRSTVWXYZ]{1})([0-9]{3})([BDFGHJKLMNPRSTVWXYZ]{2})$',// X999XX
-            '^([BDFGHJKMNPRSVWXYZ]{3})([0-9]{2})([BDFGHJKMNPRSVWXYZ]{1})$',// XXX99X 11
-            '^([BDFGHJKMNPRSVWXYZ]{1})([0-9]{2})([BDFGHJKMNPRSVWXYZ]{3})$',// X99XXX 12
-            '^([0-9]{1})([BDFGHJKMNPRSVWXYZ]{2})([0-9]{3})$',//9XX999 13
-            '^([0-9]{3})([BDFGHJKMNPRSVWXYZ]{2})([0-9]{1})$'//999XX9 14
+            '^([BDFGHJKLMNPRSTVWXZ]{2})([BDFGHJKLMNPRSTVWXZ]{2})([0-9]{2})$',// XXXX99
+            '^([0-9]{2})([BDFGHJKLMNPRSTVWXZ]{2})([BDFGHJKLMNPRSTVWXZ]{2})$',// 99XXXX
+            '^([0-9]{2})([BDFGHJKLMNPRSTVWXZ]{3})([0-9]{1})$',// 99XXX9
+            '^([0-9]{1})([BDFGHJKLMNPRSTVWXZ]{3})([0-9]{2})$',// 9XXX99
+            '^([BDFGHJKLMNPRSTVWXZ]{2})([0-9]{3})([BDFGHJKLMNPRSTVWXZ]{1})$',// XX999X
+            '^([BDFGHJKLMNPRSTVWXZ]{1})([0-9]{3})([BDFGHJKLMNPRSTVWXZ]{2})$',// X999XX
+            '^([BDFGHJKMNPRSVWXZ]{3})([0-9]{2})([BDFGHJKMNPRSVWXZ]{1})$',// XXX99X 11
+            '^([BDFGHJKMNPRSVWXZ]{1})([0-9]{2})([BDFGHJKMNPRSVWXZ]{3})$',// X99XXX 12
+            '^([0-9]{1})([BDFGHJKMNPRSVWXZ]{2})([0-9]{3})$',//9XX999 13
+            '^([0-9]{3})([BDFGHJKMNPRSVWXZ]{2})([0-9]{1})$'//999XX9 14
         ];
 
         this.forbiddenCharacters = /^((?!GVD|KKK|KVT|LPF|NSB|PKK|PSV|TBS|SS|SD|PVV|SGP|VVD).){8}$/;
@@ -56,6 +56,7 @@ export class KentekenCheck {
 
             // match on regex pattern
             if (result) {
+                console.log(re)
                 this.index = i;
                 return true;
             }

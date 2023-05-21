@@ -23,24 +23,24 @@ describe('kenteken-check-class.js', function () {
     });
 
     it('method "formatLicense" should return string', function () {
-        const kt2 = new KentekenCheck('GFYY54', inputElm);
-        inputElm.value = 'GFYY54';
+        const kt2 = new KentekenCheck('GFPT54', inputElm);
+        inputElm.value = 'GFPT54';
         const e = {
             'target': {
-                value : 'GFYY54'
+                value : 'GFPT54'
             }
         }
         kt2.bindInputListener();
         kt2.getValue(e);
 
-        expect(kt2.formatLicense()).toEqual('GF-YY-54');
+        expect(kt2.formatLicense()).toEqual('GF-PT-54');
 
     });
 
     it('this.inputElm should return null', function () {
-        const kt2 = new KentekenCheck('GFYY54', inputElm);
+        const kt2 = new KentekenCheck('GFPT54', inputElm);
         kt2.inputElm = null;
-        kt2.showLicense('GFYY54');
+        kt2.showLicense('GFPT54');
 
         expect(kt2.inputElm).toBeNull();
     });
@@ -77,16 +77,16 @@ describe('kenteken-check-class.js', function () {
     });
 
     it('method "showInContainer" should display license in the container', function () {
-        const kt2 = new KentekenCheck('GFYY54', inputElm, outputElm, true);
+        const kt2 = new KentekenCheck('GFPT54', inputElm, outputElm, true);
         const e = {
             'target': {
-                value : 'GFYY54'
+                value : 'GFPT54'
             }
         }
         kt2.bindInputListener();
         kt2.getValue(e);
 
-        expect(kt2.outputElm.innerHTML).toEqual('GF-YY-54');
+        expect(kt2.outputElm.innerHTML).toEqual('GF-PT-54');
 
     });
 
@@ -99,7 +99,7 @@ describe('kenteken-check-class.js', function () {
     });
 
     it('method "formatLicense" should return a INVALID sign XX-XX-XX', function () {
-        const arr = [ 'HJJ01L', 'VVD56R', 'VSP56T', 'SGP56T', '12359T', 'SD6677', 'P09988', 'GHFRP5', 'U123TT', 'PVV23R', '65F9F9', 'SS9988', '8ST765', '765LP9', 'TBS43P', 'PYYY0P', 'UKJJ99', 'KVT56R', 'KKK56R', 'LPF56R', 'NSB56R', 'PKK56R', 'PSV56R', 'PSS56R','S88KKK', 'P88SSD'];
+        const arr = [ 'HJJ01L', 'VVD56R', 'VSP56T', 'SGP56T', '12359T', 'SD6677', 'P09988', 'GHFRP5', 'U123TT', 'PVV23R', '65F9F9', 'SS9988', '8ST765', '765LP9', 'TBS43P', 'PYYY0P', 'UKJJ99', 'KVT56R', 'KKK56R', 'LPF56R', 'NSB56R', 'PKK56R', 'PSV56R', 'PSS56R','S88KKK', 'P88SSD','1234YI', 'C69876', '654321', 'YT6765', '67C688', '87PO70', '4321OO', '5476P9', 'LYP66T', 'CP77PP'];
         arr.forEach(item => {
             const kt2 = new KentekenCheck(item, inputElm);
 
