@@ -3,6 +3,10 @@
   "version": "1.0.20",
   "description": "rdw kentekencheck",
   "main": "src/kenteken-check-nl-class.js",
+  "exports": {
+    "./kenteken-check-nl-class": "./src/kenteken-check-nl-class.js",
+    "./kenteken-check-nl-class-ts": "./src/kenteken-check-nl-class-ts.ts"
+  },
   "scripts": {
     "test": "jest --verbose --coverage",
     "eslint": "eslint src/*.js -c .eslintrc.json",
