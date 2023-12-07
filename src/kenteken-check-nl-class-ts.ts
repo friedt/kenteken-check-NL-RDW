@@ -1,25 +1,25 @@
 export class KentekenCheck {
 
     newStr: string;
-    index: number;
     kenteken: string;
     valid: boolean;
     inputElm: HTMLInputElement | null;
     outputElm: HTMLElement | null;
     classValid: string;
+    matchedPattern: RegExp | string;
     arrRegEx: Array<string>;
     forbiddenCharacters: RegExp;
     errorMessage: string;
 
     constructor(kenteken: string, inputElm?: HTMLInputElement, outputElm?: HTMLElement, classValid = 'valid', errorMessage = 'XX-XX-XX') {
         this.newStr = '';
-        this.index = 0;
         this.kenteken = kenteken;
         this.valid = false;
         this.inputElm = inputElm ?? null;
         this.outputElm = outputElm ?? null;
         this.classValid = classValid;
         this.errorMessage = errorMessage;
+        this.matchedPattern = "";
         this.arrRegEx = ['^([A-Z]|[^0-9CIOY]{2})([0-9]{2})([0-9]{2})$', // XX9999 1951
             '^([0-9]{2})([0-9]{2})([A-Z]|[^0-9CIOY]{2})$', // 9999XX 1965
             '^([0-9]{2})([A-Z]|[^0-9CIOY]{2})([0-9]{2})$', // 99XX99 1973
@@ -53,10 +53,9 @@ export class KentekenCheck {
             const re = new RegExp(regEx);
             const result = re.test(str);
 
-
             // match on regex pattern
             if (result) {
-                this.index = i;
+                this.matchedPattern = re;
                 return true;
             }
 
@@ -76,12 +75,12 @@ export class KentekenCheck {
 
         if (matchLicense) {
             this.valid = matchLicense;
-            const re = new RegExp(this.arrRegEx[this.index]);
+
             if (this.inputElm) {
-                this.inputElm.value = str.replace(re, '$1-$2-$3');
+                this.inputElm.value = str.replace(this.matchedPattern, '$1-$2-$3');
                 this.inputElm.classList.add(this.classValid);
             }
-            this.newStr = str.replace(re, '$1-$2-$3');
+            this.newStr = str.replace(this.matchedPattern, '$1-$2-$3');
             const notForbidden = this.checkForbiddenCharacters(this.newStr)
             if (notForbidden) {
                 this.showInContainer(this.newStr);
