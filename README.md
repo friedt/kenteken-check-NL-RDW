@@ -85,7 +85,11 @@ De functie 'kentekenCheck' controleert of het ingevoerde kenteken correspondeert
 
 Verboden combinaties: GVD, KKK, KVT, LPF, NSB, PKK, PSV, TBS, SS en SD (ook niet in lettercombinaties met 3 letters)
 Verboden vanaf serie 11: PVV, SGP en VVD 
+De rdw toont momenteel alleen serie 6 t/m 10 op hun website
 https://www.rdw.nl/particulier/voertuigen/auto/de-kentekenplaat/het-kenteken-op-de-plaat/uitleg-over-de-cijfers-en-letters-op-de-kentekenplaat
+
+Alle series voor personenauto's zijn hier zichtbaar 
+https://nl.m.wikipedia.org/wiki/Nederlands_kenteken
 
 ## JavaScript methoden
 
