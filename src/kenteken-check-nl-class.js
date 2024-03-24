@@ -3,12 +3,12 @@ export class KentekenCheck {
     constructor(kenteken = '', inputElm = null, outputElm = null, classValid = 'valid', message = 'XX-XX-XX') {
         this.newStr = '';
         this.kenteken = kenteken;
-        this.index = 0;
         this.valid = false;
         this.inputElm = inputElm;
         this.outputElm = outputElm;
         this.classValid = classValid;
         this.errorMessage = message;
+        this.matchedPattern = "";
         this.arrRegEx = ['^([A-Z]|[^0-9CIOY]{2})([0-9]{2})([0-9]{2})$', // XX9999 1951
             '^([0-9]{2})([0-9]{2})([A-Z]|[^0-9CIOY]{2})$', // 9999XX 1965
             '^([0-9]{2})([A-Z]|[^0-9CIOY]{2})([0-9]{2})$', // 99XX99 1973
@@ -47,7 +47,7 @@ export class KentekenCheck {
 
             // match on regex pattern
             if (result) {
-                this.index = i;
+                this.matchedPattern = re;
                 return true;
             }
             return false
@@ -66,12 +66,12 @@ export class KentekenCheck {
 
         if (matchLicense) {
             this.valid = matchLicense;
-            const re = new RegExp(this.arrRegEx[this.index]);
+
             if (this.inputElm !== null) {
-                this.inputElm.value = str.replace(re, '$1-$2-$3');
+                this.inputElm.value = str.replace( this.matchedPattern, '$1-$2-$3');
                 this.inputElm.classList.add(this.classValid);
             }
-            this.newStr = str.replace(re, '$1-$2-$3');
+            this.newStr = str.replace( this.matchedPattern, '$1-$2-$3');
 
             const notForbidden = this.checkForbiddenCharacters(this.newStr)
             if (notForbidden) {

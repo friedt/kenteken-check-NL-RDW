@@ -8,7 +8,7 @@ const kentekenCheck = ((elm) => {
     let classInvalid = '';
     let invalidString = '';
     let newStr = '';
-    let index = 0;
+    let matchedPattern = "";
     const arrRegEx = ['^([A-Z]|[^0-9CIOY]{2})([0-9]{2})([0-9]{2})$', // XX9999 1951
         '^([0-9]{2})([0-9]{2})([A-Z]|[^0-9CIOY]{2})$', // 9999XX 1965
         '^([0-9]{2})([A-Z]|[^0-9CIOY]{2})([0-9]{2})$', // 99XX99 1973
@@ -38,7 +38,7 @@ const kentekenCheck = ((elm) => {
 
             // match on regex pattern
             if (result) {
-                index = i;
+                matchedPattern = re;
                 return true;
             }
         });
@@ -53,13 +53,13 @@ const kentekenCheck = ((elm) => {
         const match = matchLicense(str);
 
         if (match) {
-            const re = new RegExp(arrRegEx[index]);
 
-            elm.value = str.replace(re, '$1-$2-$3');
+
+            elm.value = str.replace(matchedPattern, '$1-$2-$3');
             elm.classList.remove(classInvalid);
             elm.classList.add(classValid);
 
-            newStr = str.replace(re, '$1-$2-$3');
+            newStr = str.replace(matchedPattern, '$1-$2-$3');
             const notForbidden = checkForbiddenCharacters(newStr)
             if (notForbidden) {
                 return newStr;

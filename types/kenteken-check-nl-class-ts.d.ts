@@ -1,6 +1,6 @@
 export declare class KentekenCheck {
     newStr: string;
-    index: number;
+    matchedPattern: RegExp | string;
     kenteken: string;
     valid: boolean;
     inputElm: HTMLInputElement | null;
