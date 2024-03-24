@@ -1,6 +1,6 @@
 # kenteken-check-NL / licenseplate nl / licenseplate dutch
-Kenteken-check-NL-RDW formateert en valideert kentekens volgens de officiele serie kentekencombinaties uitgegeven door de RDW vanaf 1951.
-Kenteken-check-NL-RDW formats up to date 2023 RDW written in JavaScript, TypeScript or HTML5. Since it is a es6 module, it can also be easily integrated in any js framework, like Vue, React or Angular and Vite.
+Kenteken-check-NL-RDW formateert en valideert kentekens puur clientside zonder api request naar de rdw, volgens de officiele serie kentekencombinaties uitgegeven door de RDW vanaf 1951.
+Kenteken-check-NL-RDW formats up to date 2023 RDW written in JavaScript, TypeScript or HTML5. So works without api request to RDW. Since it is a es6 module, it can also be easily integrated in any js framework, like Vue, React or Angular and Vite.
 
 ### update 2023:
 series 12(released by RDW), added X-99-XXX
@@ -85,7 +85,11 @@ De functie 'kentekenCheck' controleert of het ingevoerde kenteken correspondeert
 
 Verboden combinaties: GVD, KKK, KVT, LPF, NSB, PKK, PSV, TBS, SS en SD (ook niet in lettercombinaties met 3 letters)
 Verboden vanaf serie 11: PVV, SGP en VVD 
+De rdw toont momenteel alleen serie 6 t/m 10 op hun website
 https://www.rdw.nl/particulier/voertuigen/auto/de-kentekenplaat/het-kenteken-op-de-plaat/uitleg-over-de-cijfers-en-letters-op-de-kentekenplaat
+
+Alle series voor personenauto's zijn hier zichtbaar 
+https://nl.m.wikipedia.org/wiki/Nederlands_kenteken
 
 ## JavaScript methoden
 
