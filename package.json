@@ -2,7 +2,10 @@
   "name": "rdw-kenteken-check",
   "version": "1.0.24",
   "description": "rdw kentekencheck",
-  "exports": ["src/kenteken-check-nl-class.js", "src/kenteken-check-nl-class-ts.ts"],
+  "exports": [
+    "./src/kenteken-check-nl-class.js",
+    "./src/kenteken-check-nl-class-ts.ts"
+  ],
   "types": "types/kenteken-check-nl-class-ts.d.ts",
   "scripts": {
     "test": "jest --verbose --coverage",
