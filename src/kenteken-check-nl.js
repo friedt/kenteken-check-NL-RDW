@@ -30,7 +30,7 @@ const kentekenCheck = ((elm) => {
     // based on rdw demands
     // returns true immediately when found match : legacy browser proof IE 9/10/11, no polyfill needed
     const matchLicense = str => {
-        return arrRegEx.some((regEx, i) => {
+        return arrRegEx.some((regEx) => {
 
             const re = new RegExp(regEx);
             const result = re.test(str);

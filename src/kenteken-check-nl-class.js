@@ -39,7 +39,7 @@ export class KentekenCheck {
     }
 
     matchLicense(str) {
-        return this.arrRegEx.some((regEx, i) => {
+        return this.arrRegEx.some((regEx) => {
 
             const re = new RegExp(regEx);
             const result = re.test(str);
