@@ -22,5 +22,9 @@
         "no-unused-expressions": "error",
         "prefer-const": "error",
         "no-console": 2
-    }
+    },
+    "ignorePatterns": [
+        "src/*.spec.ts"
+    ]
+
 }

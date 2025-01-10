@@ -11,8 +11,8 @@
     "test": "jest --verbose --coverage",
     "eslint": "eslint src/*.js -c .eslintrc.json",
     "tslint": "eslint src/*.ts -c .tslintrc.json",
-    "build": "webpack --config webpack.config.js",
-    "build-ts": "webpack --config webpack.ts.config.js",
+    "build": "npm run eslint && webpack --config webpack.config.js",
+    "build-ts": "npm run tslint && webpack --config webpack.ts.config.js",
     "start": "webpack serve -c ./webpack.config.js",
     "start-ts": "webpack serve -c ./webpack.ts.config.js"
   },
