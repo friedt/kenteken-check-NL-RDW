@@ -25,7 +25,7 @@ export class KentekenCheck {
             '^([0-9]{3})([BDFGHJKLMNPRSTVWXZ]{2})([0-9]{1})$'//999XX9 14
         ];
 
-        this.forbiddenCharacters = /^((?!GVD|KKK|KVT|LPF|NSB|PKK|PSV|TBS|SS|SD|PVV|SGP|VVD).){8}$/;
+        this.forbiddenCharacters = /^((?!GVD|KKK|KVT|LPF|NSB|PKK|PSV|TBS|SS|SD|PVV|SGP|VVD|FVD|BBB).){8}$/;
     }
 
     formatLicense() {

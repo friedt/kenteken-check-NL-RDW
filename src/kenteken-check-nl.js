@@ -25,7 +25,7 @@ const kentekenCheck = ((elm) => {
         '^([0-9]{3})([BDFGHJKLMNPRSTVWXZ]{2})([0-9]{1})$'//999XX9 14
     ];
 
-    const forbiddenCharacters = /^((?!GVD|KKK|KVT|LPF|NSB|PKK|PSV|TBS|SS|SD|PVV|SGP|VVD).){8}$/;
+    const forbiddenCharacters = /^((?!GVD|KKK|KVT|LPF|NSB|PKK|PSV|TBS|SS|SD|PVV|SGP|VVD|FVD|BBB).){8}$/;
 
     // based on rdw demands
     // returns true immediately when found match : legacy browser proof IE 9/10/11, no polyfill needed
