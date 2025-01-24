@@ -134,7 +134,7 @@ The function 'kentekenCheck' returns true if a valid pattern is found and format
 
 Forbidden combinations: GVD, KKK, KVT, LPF, NSB, PKK, PSV, TBS, SS en SD (also not in character combinations with 3 characters)
 
-Forbidden as from latest serie 11: PVV, SGP and VVD 
+Forbidden as from latest serie 11: PVV, SGP, VVD, FVD, BBB
 
 # CSS
 
