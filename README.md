@@ -84,7 +84,7 @@ De array van regex patronen correspondeert met de lijst van formats op de site v
 De functie 'kentekenCheck' controleert of het ingevoerde kenteken correspondeert met het eerste valide patroon en retourneert vervolgens true en formatteert het kenteken. Indien false retourneert default 'XX-XX-XX', of een custom string, er worden in de latere series geen klinkers gebruikt en geen karakters die de RDW voorschrijft. Kentekens met AA(Koningshuis) en CD(Corps Diplomatique) zijn in deze functie niet meegenomen, de letters C en Q mogen niet meer vd overheid ivm interpretatie problemen en zijn wel meegenomen.
 
 Verboden combinaties: GVD, KKK, KVT, LPF, NSB, PKK, PSV, TBS, SS en SD (ook niet in lettercombinaties met 3 letters)
-Verboden vanaf serie 11: PVV, SGP en VVD 
+Verboden vanaf serie 11: PVV, SGP, VVD, FVD, BBB
 De rdw toont momenteel alleen serie 6 t/m 10 op hun website
 https://www.rdw.nl/particulier/voertuigen/auto/de-kentekenplaat/het-kenteken-op-de-plaat/uitleg-over-de-cijfers-en-letters-op-de-kentekenplaat
 
