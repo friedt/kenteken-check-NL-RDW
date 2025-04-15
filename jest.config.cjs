@@ -1,4 +1,5 @@
-// jest.config.js
+// jest.config.cjs
+// eslint-disable-next-line no-undef
 module.exports = {
     verbose: true,
     testEnvironment: "jsdom",

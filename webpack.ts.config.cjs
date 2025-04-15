@@ -1,7 +1,12 @@
+
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const CopyPlugin = require("copy-webpack-plugin");
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const path = require('path');
 
+// eslint-disable-next-line no-undef
 module.exports = {
     mode: 'development',
     entry: './src/index.ts',
@@ -19,6 +24,7 @@ module.exports = {
     },
     output: {
         filename: 'bundle-ts.js',
+        // eslint-disable-next-line no-undef
         path: path.resolve(__dirname, 'dist'),
     },
     plugins: [

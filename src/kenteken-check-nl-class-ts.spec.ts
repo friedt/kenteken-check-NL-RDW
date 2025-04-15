@@ -1,4 +1,3 @@
-
 import {KentekenCheck} from './kenteken-check-nl-class-ts';
 
 describe('kenteken-check-class-ts.ts', function () {
