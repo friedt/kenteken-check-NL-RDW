@@ -77,7 +77,7 @@ describe('kenteken-check-class-ts.ts', function () {
         } as any;
         kt2.bindInputListener();
         kt2.getValue(e);
-        expect(outputElm.innerHTML).toEqual('GF-TR-54');
+        expect(outputElm.innerText).toEqual('GF-TR-54');
 
 
     });
@@ -106,7 +106,7 @@ describe('kenteken-check-class-ts.ts', function () {
             const valid = kt2.valid;
             expect(kt2.formatLicense()).toEqual('XX-XX-XX');
             expect(valid).toEqual(false);
-            expect(outputElm.innerHTML).toEqual('XX-XX-XX');
+            expect(outputElm.innerText).toEqual('XX-XX-XX');
 
         });
 
@@ -128,7 +128,7 @@ describe('kenteken-check-class-ts.ts', function () {
             const valid = kt2.valid;
 
             expect(valid).toEqual(false);
-            expect(outputElm.innerHTML).toEqual('Geen geldig kenteken');
+            expect(outputElm.innerText).toEqual('Geen geldig kenteken');
             //expect(outputElm).toMatchSnapshot()
         });
     })
