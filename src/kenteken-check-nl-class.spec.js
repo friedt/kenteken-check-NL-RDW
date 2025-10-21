@@ -86,7 +86,7 @@ describe('kenteken-check-class.js', function () {
         kt2.bindInputListener();
         kt2.getValue(e);
 
-        expect(kt2.outputElm.innerHTML).toEqual('GF-PT-54');
+        expect(kt2.outputElm.innerText).toEqual('GF-PT-54');
 
     });
 
