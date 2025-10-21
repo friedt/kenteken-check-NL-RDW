@@ -107,6 +107,6 @@ inputElm.addEventListener('input', (e) => {
     // returns string
     if (e.target.value.length >= 6){
         const license =  kentekenCheck.getLicense(e.target.value);
-        el.innerHTML = license;
+        el.innerText = license;
     }
 });
