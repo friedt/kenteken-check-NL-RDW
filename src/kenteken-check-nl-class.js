@@ -90,7 +90,7 @@ export class KentekenCheck {
 
     showInContainer(str) {
         if (this.outputElm !== null) {
-            this.outputElm.innerHTML = str;
+            this.outputElm.innerText = str;
         }
         return str;
     }
