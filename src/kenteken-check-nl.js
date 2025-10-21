@@ -100,7 +100,7 @@ const kentekenCheck = ((elm) => {
 
 //default example
 
-el.innerHTML = kentekenCheck.getLicense('S007JB');
+el.innerText = kentekenCheck.getLicense('S007JB');
 
 
 inputElm.addEventListener('input', (e) => {
