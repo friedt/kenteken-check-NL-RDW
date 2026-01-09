@@ -9,9 +9,9 @@ export class KentekenCheck {
         this.classValid = classValid;
         this.errorMessage = message;
         this.matchedPattern = "";
-        this.arrRegEx = ['^([A-Z]|[^0-9CIOY]{2})([0-9]{2})([0-9]{2})$', // XX9999 1951
-            '^([0-9]{2})([0-9]{2})([A-Z]|[^0-9CIOY]{2})$', // 9999XX 1965
-            '^([0-9]{2})([A-Z]|[^0-9CIOY]{2})([0-9]{2})$', // 99XX99 1973
+        this.arrRegEx = ['^([A-Z]|[^0-9CIOQ]{2})([0-9]{2})([0-9]{2})$', // XX9999 1951
+            '^([0-9]{2})([0-9]{2})([A-Z]|[^0-9CIOQ]{2})$', // 9999XX 1965
+            '^([0-9]{2})([A-Z]|[^0-9CIOQ]{2})([0-9]{2})$', // 99XX99 1973
             '^([BDFGHJKLMNPRSTVWXYZ]{2})([0-9]{2})([BDFGHJKLMNPRSTVWXYZ]{2})$',// XX99XX 1978
             '^([BDFGHJKLMNPRSTVWXZ]{2})([BDFGHJKLMNPRSTVWXZ]{2})([0-9]{2})$',// XXXX99 1991
             '^([0-9]{2})([BDFGHJKLMNPRSTVWXZ]{2})([BDFGHJKLMNPRSTVWXZ]{2})$',// 99XXXX 1999
