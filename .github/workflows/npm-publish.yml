@@ -40,4 +40,4 @@ jobs:
             node --version
             npm  --version
             
-      - run: npm publish
+      - run: npm publish --loglevel verbose
