@@ -36,6 +36,5 @@ jobs:
           package-manager-cache: false
       - run: npm install -g npm@latest
       - run: npm ci
-      - run: node --version
-      - run: npm  --version
+
       - run: npm publish 
